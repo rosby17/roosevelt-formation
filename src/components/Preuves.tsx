@@ -14,8 +14,8 @@ import { useState } from "react";
 const CAPTURES: { src: string; label: string; tag: string }[] = [
   { src: "/preuves/chaine-1.jpeg", label: "25 000€ générés avec ma chaine où j'ai eu le trophé des 100k d'abonnés", tag: "Revenus" },
   { src: "/preuves/chaine-2.jpeg", label: "10 416€ générés dans le marché anglais RPM de 10€/1000 vues niche religion", tag: "Revenus" },
-  { src: "/preuves/chaine-3.jpeg", label: "10 433€ générés dans le marché francophone RPM 3€/1000 vues niche religion", tag: "Monetisation" },
-  { src: "/preuves/chaine-4.jpeg", label: "Revenu en 3 jours de monetisation chaine lancé en 2 semaines", tag: "Revenus" },
+  { src: "/preuves/chaine-4.jpeg", label: "10 433€ générés dans le marché francophone RPM 3€/1000 vues niche religion", tag: "Monetisation" },
+  { src: "/preuves/chaine-3.jpeg", label: "Revenu en 3 jours de monetisation chaine lancé en 2 semaines", tag: "Revenus" },
 
 ];
 // ───────────────────────────────────────────────────────────────────────────
