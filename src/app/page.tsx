@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Programme from "@/components/Programme";
+import Prerequis from "@/components/Prerequis";
 import Offres from "@/components/Offres";
 import Resultats from "@/components/Resultats";
 import Faq from "@/components/Faq";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Programme />
+      <Prerequis />
       <Offres />
       <Resultats />
       <Faq />
