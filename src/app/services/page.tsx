@@ -8,8 +8,8 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      {/* Spacer to push content down because Navbar is fixed */}
-      <div style={{ height: "80px", background: "var(--black-bg)" }} />
+      {/* Spacer for fixed navbar */}
+      <div style={{ height: "80px", background: "var(--black)" }} />
       <Services />
       <Contact />
     </>

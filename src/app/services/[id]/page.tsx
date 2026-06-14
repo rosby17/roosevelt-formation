@@ -19,7 +19,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
     return (
       <>
         <Navbar />
-        <div style={{ height: "80px", background: "var(--black-bg)" }} />
+        <div style={{ height: "80px", background: "var(--black)" }} />
         <div style={{ padding: "120px 24px", textAlign: "center", color: "var(--white)" }}>
           <h2 style={{ fontSize: 32, marginBottom: 16 }}>Service introuvable</h2>
           <p style={{ color: "var(--white-muted)", marginBottom: 32 }}>Ce service n&apos;existe pas ou a été déplacé.</p>
@@ -40,10 +40,10 @@ export default function ServiceDetailPage({ params }: PageProps) {
       <Navbar />
       
       {/* Spacer for fixed navbar */}
-      <div style={{ height: "80px", background: "var(--black-bg)" }} />
+      <div style={{ height: "80px", background: "var(--black)" }} />
 
       {/* Main product presentation */}
-      <main style={{ padding: "80px 0", background: "var(--black-bg)", color: "var(--white)" }}>
+      <main style={{ padding: "80px 0", background: "var(--black)", color: "var(--white)" }}>
         <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px" }}>
           
           <div style={{ marginBottom: 32 }}>

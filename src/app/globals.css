@@ -16,6 +16,18 @@
   --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --black: #FAFAFA;
+    --black-card: #FFFFFF;
+    --black-mid: #F5F5F5;
+    --black-line: #EAEAEA;
+    --white: #0D0D0D;
+    --white-muted: #635F5A;
+    --white-dim: #A09C96;
+  }
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {

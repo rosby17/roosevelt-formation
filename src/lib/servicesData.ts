@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     badge: "Monétisation",
     price: "20% à 40% de commission",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/association-de-compte-adsense-youtube-eligible/checkout",
-    image: "/logo.png",
+    image: "/roosevelt.jpg",
     iconPath: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M12 4v16 M2 12h20",
   },
   {
@@ -39,7 +39,7 @@ export const SERVICES: Service[] = [
     badge: "Facebook",
     price: "20% à 40% de commission",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/configuration-de-compte-de-reglement-facebook/checkout",
-    image: "/logo.png",
+    image: "/roosevelt.jpg",
     iconPath: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
   },
   {
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     badge: "Économique",
     price: "À partir de 3 000 FCFA/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/vente-dabonnements-partages-ia-outils/checkout",
-    image: "/logo.png",
+    image: "/roosevelt.jpg",
     iconPath: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z",
   },
   {
@@ -59,7 +59,7 @@ export const SERVICES: Service[] = [
     badge: "Boutique",
     price: "À négocier",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/creation-de-boutique-en-ligne-chariow-maketou/checkout",
-    image: "/logo.png",
+    image: "/roosevelt.jpg",
     iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
   },
 ];

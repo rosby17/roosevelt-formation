@@ -8,8 +8,8 @@ export default function Services() {
     <section
       id="services"
       style={{
-        padding: "100px 0",
-        background: "var(--black-bg)",
+        padding: "120px 0",
+        background: "var(--black)",
         borderTop: "1px solid var(--black-line)",
       }}
     >
