@@ -5,28 +5,22 @@ export interface Service {
   title: string;
   desc: string;
   badge: string;
-  originalPrice?: string;
   price: string;
   checkoutUrl: string;
   image: string;
-  iconPath: string;
-  rating: string;
-  purchases: string;
+  iconPath: string; // fallback SVG path if image is missing
 }
 
 export const SERVICES: Service[] = [
   {
     id: "phone-validation",
     title: "Validation de numéro de téléphone de chaîne",
-    desc: "Déverrouille les fonctionnalités avancées de YouTube (miniatures personnalisées, vidéos de plus de 15 minutes, diffusions en direct) en faisant valider ton numéro via un compte sécurisé et propre. Service rapide et fiable.",
+    desc: "Déverrouille les fonctionnalités avancées de YouTube (miniatures personnalisées, vidéos de plus de 15 minutes, diffusions en direct) en faisant valider ton numéro via un compte sécurisé et propre.",
     badge: "Indispensable",
-    originalPrice: "5 500 FCFA",
     price: "2 500 FCFA",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/validation-de-numero-de-telephone-de-chaine/checkout",
-    image: "/preuves/chaine-4.jpeg",
+    image: "/logo.png",
     iconPath: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
-    rating: "100% (1 Avis)",
-    purchases: "12+ Achats",
   },
   {
     id: "adsense-link",
@@ -35,10 +29,8 @@ export const SERVICES: Service[] = [
     badge: "Monétisation",
     price: "20% à 40% de commission",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/association-de-compte-adsense-youtube-eligible/checkout",
-    image: "/preuves/chaine-1.jpeg",
+    image: "/logo.png",
     iconPath: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M12 4v16 M2 12h20",
-    rating: "100% (4 Avis)",
-    purchases: "24+ Achats",
   },
   {
     id: "facebook-payout",
@@ -47,10 +39,8 @@ export const SERVICES: Service[] = [
     badge: "Facebook",
     price: "20% à 40% de commission",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/configuration-de-compte-de-reglement-facebook/checkout",
-    image: "/preuves/chaine-3.jpeg",
+    image: "/logo.png",
     iconPath: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
-    rating: "100% (2 Avis)",
-    purchases: "8+ Achats",
   },
   {
     id: "shared-accounts",
@@ -61,8 +51,6 @@ export const SERVICES: Service[] = [
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/vente-dabonnements-partages-ia-outils/checkout",
     image: "/logo.png",
     iconPath: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8z",
-    rating: "100% (8 Avis)",
-    purchases: "42+ Achats",
   },
   {
     id: "online-store",
@@ -73,7 +61,5 @@ export const SERVICES: Service[] = [
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/creation-de-boutique-en-ligne-chariow-maketou/checkout",
     image: "/logo.png",
     iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
-    rating: "100% (1 Avis)",
-    purchases: "5+ Achats",
   },
 ];
