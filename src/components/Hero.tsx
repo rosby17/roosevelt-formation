@@ -79,7 +79,7 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.1s",
           }}
         >
-          Gagnez de l' <em style={{ fontStyle: "italic", color: "var(--red)" }}>argent.</em>
+          Gagnez de <em style={{ fontStyle: "italic", color: "var(--red)" }}>l'argent.</em>
           <br />
           grâce à Youtube.
         </h1>

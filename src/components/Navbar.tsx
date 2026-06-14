@@ -64,8 +64,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Logo"
-            width={32}
-            height={32}
+            width={42}
+            height={42}
             style={{ borderRadius: "50%", objectFit: "contain" }}
           />
           <span>
