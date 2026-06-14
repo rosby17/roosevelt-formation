@@ -79,9 +79,7 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.1s",
           }}
         >
-          YouTube,
-          <br />
-          <em style={{ fontStyle: "italic", color: "var(--red)" }}>monétisé.</em>
+          YouTube, <em style={{ fontStyle: "italic", color: "var(--red)" }}>monétisé.</em>
           <br />
           Sans audience.
         </h1>
