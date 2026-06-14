@@ -2,7 +2,7 @@ export const SITE = {
   name: "Roosevelt Mogo",
   tagline: "Accompagnement YouTube Monétisation",
   description:
-    "Développe et monétise ta chaîne YouTube depuis l'Afrique francophone. 10 modules, avatars IA, stratégie multi-chaînes.",
+    "Développe et monétise ta chaîne YouTube. 10 modules, avatars IA, stratégie multi-chaînes, sans audience de départ.",
   url: "https://formation.tools-cl.com",
   socials: {
     youtube: "https://www.youtube.com/@rooseveltmogo",
@@ -121,7 +121,7 @@ export const RESULTS = [
   {
     icon: "cpu",
     title: "Avatars IA maîtrisés",
-    desc: "Produire des vidéos sans montrer ton visage, avec des outils accessibles depuis l'Afrique.",
+    desc: "Produire des vidéos sans montrer ton visage, avec des outils accessibles partout dans le monde.",
   },
   {
     icon: "chart",
@@ -142,10 +142,10 @@ export const FAQS = [
   },
   {
     q: "Quelle est la vraie différence entre le Replay et le Live ?",
-    a: "Le Replay te donne accès aux sessions enregistrées avec d'autres apprenants — tu avances à ton rythme. Le Live à 50 000 FCFA c'est une session en direct avec moi sur Google Meet : on analyse ta situation, ta niche, ta chaîne. Tu repars avec un plan personnalisé et le replay de ta session.",
+    a: "Le Replay te donne accès aux sessions enregistrées avec d'autres apprenants — tu avances à ton rythme. Le Live c'est une session en direct avec moi sur Google Meet : on analyse ta situation, ta niche, ta chaîne. Tu repars avec un plan personnalisé et le replay de ta session.",
   },
   {
-    q: "Peut-on vraiment gagner de l'argent sur YouTube depuis le Cameroun ?",
+    q: "Peut-on vraiment gagner de l'argent sur YouTube sans grande audience ?",
     a: "Oui — et j'en suis la preuve. La clé c'est de choisir le bon pays de monétisation et de cibler les bonnes audiences. On voit précisément quels pays choisir et comment travailler avec des niches à fort RPM, y compris des audiences anglophones.",
   },
   {

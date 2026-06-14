@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { SITE } from "@/lib/data";
 
 export default function Hero() {
@@ -7,11 +6,17 @@ export default function Hero() {
     <header
       style={{
         minHeight: "100vh",
-        display: "grid",
-        gridTemplateColumns: "480px 1fr",  // ← photo à gauche, texte à droite
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
         paddingTop: 80,
-        overflow: "hidden",
+        paddingBottom: 80,
+        paddingLeft: 28,
+        paddingRight: 28,
         position: "relative",
+        overflow: "hidden",
+        textAlign: "center",
       }}
     >
       {/* Background glow */}
@@ -21,105 +26,20 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 60% at 90% 50%, rgba(200,16,46,0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,16,46,0.07) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
 
-      {/* Left — photo */}
-      <div
-        style={{
-          position: "relative",
-          background: "var(--black-card)",
-          overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-        }}
-        className="hero-photo-panel"
-      >
-        <Image
-          src="/photo.png"
-          alt="Roosevelt Mogo"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center top", filter: "grayscale(10%)" }}
-          priority
-        />
-        {/* Gradient overlay */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to top, rgba(13,13,13,0.85) 0%, rgba(13,13,13,0.1) 50%, transparent 100%)",
-          }}
-        />
-        {/* Info card */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            margin: 24,
-            background: "rgba(13,13,13,0.85)",
-            backdropFilter: "blur(16px)",
-            border: "1px solid var(--black-line)",
-            borderRadius: 20,
-            padding: "20px 24px",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 20,
-              fontWeight: 700,
-              color: "var(--white)",
-            }}
-          >
-            Roosevelt Mogo
-          </div>
-          <div style={{ fontSize: 13, color: "var(--red)", marginTop: 3, fontWeight: 500 }}>
-            Créateur · Entrepreneur digital · Formateur
-          </div>
-          <div style={{ display: "flex", gap: 8, marginTop: 14, flexWrap: "wrap" }}>
-            {["YouTube", "Avatars IA", "Multi-chaînes"].map((b) => (
-              <span
-                key={b}
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  letterSpacing: "0.06em",
-                  background: "var(--red-soft)",
-                  color: "var(--red)",
-                  border: "1px solid rgba(200,16,46,0.25)",
-                  padding: "4px 12px",
-                  borderRadius: 99,
-                }}
-              >
-                {b}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Content */}
+      <div style={{ maxWidth: 800, width: "100%", position: "relative", zIndex: 1 }}>
 
-      {/* Right — text */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px 60px 80px 60px",
-          borderLeft: "1px solid var(--black-line)",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
         {/* Eyebrow */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             gap: 10,
             marginBottom: 28,
             animation: "fadeUp 0.65s ease both 0s",
@@ -142,7 +62,7 @@ export default function Hero() {
               color: "var(--red)",
             }}
           >
-            Accompagnement · Cameroun & Afrique Francophone
+            Accompagnement YouTube · Monétisation
           </span>
         </div>
 
@@ -150,12 +70,12 @@ export default function Hero() {
         <h1
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(42px, 5.5vw, 72px)",
+            fontSize: "clamp(48px, 7vw, 88px)",
             fontWeight: 900,
             lineHeight: 1.03,
             letterSpacing: "-0.02em",
             color: "var(--white)",
-            marginBottom: 24,
+            marginBottom: 28,
             animation: "fadeUp 0.65s ease both 0.1s",
           }}
         >
@@ -169,11 +89,11 @@ export default function Hero() {
         {/* Subtitle */}
         <p
           style={{
-            fontSize: 17,
+            fontSize: 18,
             color: "var(--white-muted)",
             lineHeight: 1.75,
-            maxWidth: 460,
-            marginBottom: 48,
+            maxWidth: 560,
+            margin: "0 auto 48px",
             animation: "fadeUp 0.65s ease both 0.2s",
           }}
         >
@@ -187,11 +107,10 @@ export default function Hero() {
             display: "flex",
             flexWrap: "wrap",
             gap: 12,
-            marginBottom: 64,
+            justifyContent: "center",
             animation: "fadeUp 0.65s ease both 0.3s",
           }}
         >
-          {/* Bouton Session Live avec icône Google Meet */}
           <a
             href={SITE.offers.live.url}
             target="_blank"
@@ -219,7 +138,6 @@ export default function Hero() {
               e.currentTarget.style.background = "var(--red)";
             }}
           >
-            {/* Icône Google Meet SVG officielle */}
             <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path fill="#fff" d="M29 10H13C10.8 10 9 11.8 9 14v20c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4z" />
               <path fill="rgba(255,255,255,0.3)" d="M33 18l6-4v20l-6-4V18z" />
@@ -230,7 +148,6 @@ export default function Hero() {
             </svg>
           </a>
 
-          {/* Bouton Replay */}
           <a
             href={SITE.offers.replay.url}
             target="_blank"
@@ -260,61 +177,8 @@ export default function Hero() {
           >
             Replay — 10 000 FCFA
           </a>
-    </div>
-
-        {/* Stats */ }
-  <div
-    style={{
-      display: "flex",
-      gap: 40,
-      paddingTop: 40,
-      borderTop: "1px solid var(--black-line)",
-      flexWrap: "wrap",
-      animation: "fadeUp 0.65s ease both 0.4s",
-    }}
-  >
-    {[
-      { num: "10", label: "Modules\ncomplets" },
-      { num: "1 000", label: "Abonnés\nobjectif" },
-      { num: "0 €", label: "Équipement\nrequis" },
-    ].map((s) => (
-      <div key={s.num}>
-        <div
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 32,
-            fontWeight: 900,
-            color: "var(--white)",
-            lineHeight: 1,
-          }}
-        >
-          {s.num}
-        </div>
-        <div
-          style={{
-            fontSize: 13,
-            color: "var(--white-dim)",
-            marginTop: 4,
-            lineHeight: 1.4,
-            whiteSpace: "pre-line",
-          }}
-        >
-          {s.label}
         </div>
       </div>
-    ))}
-  </div>
-      </div >
-
-    <style>{`
-        @media (max-width: 900px) {
-          header { grid-template-columns: 1fr !important; }
-          .hero-photo-panel { 
-            min-height: 60vh;
-            display: flex !important;
-          }
-        }
-      `}</style>
-    </header >
+    </header>
   );
 }

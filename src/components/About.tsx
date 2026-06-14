@@ -5,7 +5,7 @@ const facts = [
   "Créateur YouTube multi-niches — football, psychologie, santé, spiritualité",
   "Spécialiste HeyGen, avatars IA et production vidéo sans visage",
   "Stratégies testées sur audiences francophones et anglophones",
-  "Entrepreneur dans l'économie digitale africaine depuis plusieurs années",
+  "Entrepreneur dans l'économie digitale depuis plusieurs années",
 ];
 
 const metrics = [
@@ -101,7 +101,6 @@ export default function About() {
             </h2>
 
             <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginTop: 4 }}>
-              Je suis Roosevelt Mogo, entrepreneur digital et créateur YouTube.
               J&apos;ai construit plusieurs chaînes YouTube dans différentes niches pour des audiences
               francophones et anglophones.
             </p>

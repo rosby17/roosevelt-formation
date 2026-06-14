@@ -73,7 +73,7 @@ export default function Contact() {
                 <em style={{ fontStyle: "italic", color: "var(--red)" }}>connectés partout.</em>
               </h2>
               <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginBottom: 36 }}>
-                Suis mon travail, pose tes questions, ou rejoins ma communauté de créateurs africains
+                Suis mon travail, pose tes questions, ou rejoins ma communauté de créateurs
                 qui construisent leur liberté financière en ligne.
               </p>
 
@@ -270,7 +270,7 @@ export default function Contact() {
             Roosevelt <span style={{ color: "var(--red)" }}>Mogo</span>
           </div>
           <p style={{ fontSize: 12, color: "var(--white-dim)" }}>
-            © 2026 Roosevelt Mogo · Yaoundé, Cameroun
+            © 2026 Roosevelt Mogo
           </p>
           <ul style={{ display: "flex", gap: 22, listStyle: "none" }}>
             {[
