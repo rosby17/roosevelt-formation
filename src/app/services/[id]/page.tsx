@@ -54,88 +54,102 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
           <div style={{
             display: "grid",
-            gridTemplateColumns: "minmax(300px, 450px) 1fr",
-            gap: 64,
+            gridTemplateColumns: "1fr 1.1fr",
+            gap: 48,
             alignItems: "start",
             background: "var(--black-card)",
             border: "1px solid var(--black-line)",
             borderRadius: 24,
-            padding: 48,
+            padding: 40,
             marginBottom: 80
           }} className="product-layout">
             
-            {/* Left Column: Image */}
+            {/* Left Column: Image Card */}
             <div style={{
               position: "relative",
               width: "100%",
-              aspectRatio: "1/1",
+              aspectRatio: "1.1/1",
               background: "var(--black-mid)",
-              borderRadius: 16,
+              borderRadius: 20,
               overflow: "hidden",
               border: "1px solid var(--black-line)",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.2)"
             }}>
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                style={{ objectFit: "contain", padding: 40 }}
+                style={{ objectFit: "cover" }}
               />
+              <div style={{
+                position: "absolute",
+                bottom: 16,
+                left: 16,
+                background: "var(--red)",
+                color: "#fff",
+                fontSize: 11,
+                fontWeight: 700,
+                padding: "6px 12px",
+                borderRadius: 6,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                boxShadow: "0 4px 12px rgba(200,16,46,0.3)"
+              }}>
+                Service Rapide
+              </div>
             </div>
 
             {/* Right Column: Info */}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
               <div>
-                <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 18 }}>
+                <h1 style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "clamp(24px, 3vw, 32px)",
+                  fontWeight: 800,
+                  lineHeight: 1.25,
+                  marginBottom: 12,
+                  color: "var(--white)"
+                }}>
+                  {service.title}
+                </h1>
+
+                {/* Chariow Stats */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center", fontSize: 13, color: "var(--white-dim)", marginBottom: 24 }}>
+                  <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    <span style={{ color: "#FACC15" }}>★</span> {service.rating}
+                  </span>
+                  <span style={{ color: "var(--black-line)" }}>|</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    👥 {service.purchases}
+                  </span>
+                  <span style={{ color: "var(--black-line)" }}>|</span>
                   <span style={{
-                    fontSize: 10,
+                    fontSize: 11,
                     fontWeight: 700,
-                    letterSpacing: "0.05em",
                     textTransform: "uppercase",
                     color: "var(--red)",
                     background: "rgba(200,16,46,0.08)",
-                    border: "1px solid rgba(200,16,46,0.2)",
-                    padding: "4px 10px",
-                    borderRadius: 99
+                    border: "1px solid rgba(200,16,46,0.15)",
+                    padding: "2px 8px",
+                    borderRadius: 4
                   }}>
                     {service.badge}
                   </span>
                 </div>
 
-                <h1 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(26px, 3.5vw, 42px)",
-                  fontWeight: 900,
-                  lineHeight: 1.15,
-                  marginBottom: 24,
-                  letterSpacing: "-0.01em"
-                }}>
-                  {service.title}
-                </h1>
-
-                <p style={{
-                  fontSize: 16,
-                  color: "var(--white-muted)",
-                  lineHeight: 1.8,
-                  marginBottom: 32
-                }}>
-                  {service.desc}
-                </p>
-              </div>
-
-              <div>
-                <div style={{
-                  borderTop: "1px solid var(--black-line)",
-                  paddingTop: 24,
-                  marginBottom: 28,
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline"
-                }}>
-                  <span style={{ fontSize: 14, color: "var(--white-dim)" }}>Tarif</span>
-                  <span style={{ fontSize: 26, fontWeight: 900, color: "var(--red)" }}>{service.price}</span>
+                {/* Price block */}
+                <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 28 }}>
+                  {service.originalPrice && (
+                    <span style={{ fontSize: 18, color: "var(--white-dim)", textDecoration: "line-through", opacity: 0.65 }}>
+                      {service.originalPrice}
+                    </span>
+                  )}
+                  <span style={{ fontSize: 32, fontWeight: 900, color: "var(--red)" }}>
+                    {service.price}
+                  </span>
                 </div>
 
                 <a
@@ -147,23 +161,89 @@ export default function ServiceDetailPage({ params }: PageProps) {
                     alignItems: "center",
                     justifyContent: "center",
                     width: "100%",
-                    background: "var(--red)",
-                    color: "var(--white)",
+                    background: "#000",
+                    border: "1.5px solid var(--black-line)",
+                    color: "#fff",
                     padding: "16px",
                     borderRadius: 12,
                     fontSize: 16,
                     fontWeight: 700,
                     textDecoration: "none",
-                    boxShadow: "0 6px 20px rgba(200,16,46,0.35)",
-                    transition: "all 0.2s"
+                    transition: "all 0.2s",
+                    textAlign: "center",
+                    marginBottom: 28
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.background = "var(--red-dim)"}
-                  onMouseLeave={(e) => e.currentTarget.style.background = "var(--red)"}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--red)";
+                    e.currentTarget.style.borderColor = "var(--red)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#000";
+                    e.currentTarget.style.borderColor = "var(--black-line)";
+                  }}
                 >
-                  Commander ce service &rarr;
+                  Acheter maintenant
                 </a>
-              </div>
 
+                {/* Payment Methods */}
+                <div style={{ textAlign: "center", marginBottom: 28 }}>
+                  <div style={{ fontSize: 12, color: "var(--white-dim)", marginBottom: 10 }}>Moyens de paiement disponibles</div>
+                  <div style={{ display: "flex", justifyContent: "center", gap: 8 }}>
+                    {["Orange Money", "MTN MoMo", "Wave", "Visa", "Mastercard"].map((m, idx) => (
+                      <span key={idx} style={{
+                        fontSize: 11,
+                        background: "rgba(255,255,255,0.04)",
+                        border: "1px solid var(--black-line)",
+                        borderRadius: 6,
+                        padding: "6px 10px",
+                        color: "var(--white-muted)"
+                      }}>
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer links */}
+                <div style={{
+                  borderTop: "1px solid var(--black-line)",
+                  paddingTop: 20,
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: 32,
+                  fontSize: 13,
+                  color: "var(--white-muted)"
+                }}>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigator.clipboard.writeText(window.location.href);
+                      alert("Lien du service copié !");
+                    }}
+                    style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}
+                  >
+                    🔗 Partager
+                  </a>
+                  <a
+                    href="https://wa.me/237655306425"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}
+                  >
+                    💬 Contact
+                  </a>
+                  <a
+                    href="https://wa.me/237655306425?text=Bonjour,%20je%20souhaite%20savoir%20comment%20acheter%20le%20service"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "var(--red)", textDecoration: "none", fontWeight: 600 }}
+                  >
+                    ❓ Comment acheter ?
+                  </a>
+                </div>
+
+              </div>
             </div>
 
           </div>
