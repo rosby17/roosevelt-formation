@@ -79,9 +79,9 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.1s",
           }}
         >
-          YouTube, <em style={{ fontStyle: "italic", color: "var(--red)" }}>monétisé.</em>
+          Gagnez de l', <em style={{ fontStyle: "italic", color: "var(--red)" }}>argent.</em>
           <br />
-          Sans audience.
+          Sur Youtube.
         </h1>
 
         {/* Subtitle */}
@@ -96,7 +96,7 @@ export default function Hero() {
           }}
         >
           Crée, configure et développe une chaîne qui génère des revenus réels —
-          niches rentables, avatars IA, stratégie multi-chaînes. J&apos;ai fait les erreurs pour toi.
+          niches rentables, avatars IA, stratégie multi-chaînes.
         </p>
 
         {/* CTAs */}
@@ -109,7 +109,6 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.3s",
           }}
         >
-          {/* Premium Live CTA */}
           <a
             href={SITE.offers.live.url}
             target="_blank"
@@ -117,45 +116,41 @@ export default function Hero() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 16,
-              background: "linear-gradient(135deg, var(--red) 0%, #d80b2a 100%)",
+              gap: 10,
+              background: "var(--red)",
               color: "#fff",
-              padding: "18px 36px",
-              borderRadius: 14,
+              fontSize: 15,
+              fontWeight: 600,
+              padding: "14px 28px",
+              borderRadius: 6,
               textDecoration: "none",
-              boxShadow: "0 8px 32px rgba(200, 16, 46, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
-              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              boxShadow: "0 4px 20px rgba(200,16,46,0.3)",
+              transition: "transform 0.15s, background 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
-              e.currentTarget.style.boxShadow = "0 14px 40px rgba(200, 16, 46, 0.55), inset 0 1px 0 rgba(255,255,255,0.3)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.background = "var(--red-dim)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
-              e.currentTarget.style.boxShadow = "0 8px 32px rgba(200, 16, 46, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.background = "var(--red)";
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.15)", padding: 8, borderRadius: 10 }}>
-              <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#fff" d="M29 10H13C10.8 10 9 11.8 9 14v20c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4z" />
-                <path fill="rgba(255,255,255,0.3)" d="M33 18l6-4v20l-6-4V18z" />
-              </svg>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.9 }}>
-                <span>Session Live</span>
-                <span style={{ background: "rgba(0,0,0,0.3)", padding: "2px 6px", borderRadius: 4, textDecoration: "line-through", fontSize: 10 }}>
-                  {SITE.offers.live.originalPrice} {SITE.offers.live.currency}
-                </span>
-              </div>
-              <div style={{ fontSize: 18, fontWeight: 800, marginTop: 2 }}>
-                {SITE.offers.live.price} {SITE.offers.live.currency} <span style={{ fontSize: 14, fontWeight: 400, opacity: 0.8 }}>&rarr;</span>
-              </div>
-            </div>
+            <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#fff" d="M29 10H13C10.8 10 9 11.8 9 14v20c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4z" />
+              <path fill="rgba(255,255,255,0.3)" d="M33 18l6-4v20l-6-4V18z" />
+            </svg>
+            <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
+              <span style={{ fontSize: 11, opacity: 0.7, textDecoration: "line-through", lineHeight: 1 }}>
+                {SITE.offers.live.currency} {SITE.offers.live.originalPrice}
+              </span>
+              <span>Session Live &mdash; {SITE.offers.live.currency} {SITE.offers.live.price}</span>
+            </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
           </a>
 
-          {/* Premium Replay CTA */}
           <a
             href={SITE.offers.replay.url}
             target="_blank"
@@ -163,45 +158,32 @@ export default function Hero() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 16,
-              background: "rgba(255, 255, 255, 0.03)",
+              gap: 8,
+              background: "transparent",
               color: "var(--white)",
-              padding: "18px 36px",
-              borderRadius: 14,
+              fontSize: 15,
+              fontWeight: 600,
+              padding: "14px 32px",
+              borderRadius: 6,
               border: "1px solid var(--black-line)",
               textDecoration: "none",
-              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.15s, border-color 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
+              e.currentTarget.style.transform = "translateY(-2px)";
               e.currentTarget.style.borderColor = "var(--white-dim)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.07)";
-              e.currentTarget.style.boxShadow = "0 12px 30px rgba(0, 0, 0, 0.3)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.transform = "translateY(0)";
               e.currentTarget.style.borderColor = "var(--black-line)";
-              e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.06)", padding: 8, borderRadius: 10 }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.8 }}>
-                <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
-              </svg>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.7 }}>
-                <span>Replay enregistré</span>
-                <span style={{ opacity: 0.6, textDecoration: "line-through", fontSize: 10 }}>
-                  {SITE.offers.replay.originalPrice} {SITE.offers.replay.currency}
-                </span>
-              </div>
-              <div style={{ fontSize: 18, fontWeight: 800, marginTop: 2 }}>
-                {SITE.offers.replay.price} {SITE.offers.replay.currency}
-              </div>
-            </div>
+            <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
+              <span style={{ fontSize: 11, opacity: 0.55, textDecoration: "line-through", lineHeight: 1 }}>
+                {SITE.offers.replay.currency} {SITE.offers.replay.originalPrice}
+              </span>
+              <span>Replay &mdash; {SITE.offers.replay.currency} {SITE.offers.replay.price}</span>
+            </span>
           </a>
         </div>
       </div>
