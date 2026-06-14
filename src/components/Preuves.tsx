@@ -65,8 +65,8 @@ export default function Preuves() {
       id="preuves"
       style={{
         padding: "120px 0",
-        background: "var(--white)",
-        borderTop: "1px solid #EAEAEA",
+        background: "var(--black-card)",
+        borderTop: "1px solid var(--black-line)",
       }}
     >
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px" }}>
@@ -86,13 +86,13 @@ export default function Preuves() {
             fontFamily: "var(--font-display)",
             fontSize: "clamp(32px, 4vw, 52px)",
             fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.08,
-            color: "var(--black)", marginBottom: 16,
+            color: "var(--white)", marginBottom: 16,
           }}>
             Pas des promesses.
             <br />
             <em style={{ fontStyle: "italic", color: "var(--red)" }}>Des preuves.</em>
           </h2>
-          <p style={{ fontSize: 16, color: "var(--black-mid)", lineHeight: 1.75 }}>
+          <p style={{ fontSize: 16, color: "var(--white-muted)", lineHeight: 1.75 }}>
             Des captures d&apos;écran de chaînes et de revenus réels — de mes apprenants qui ont appliqué la méthode.
           </p>
         </div>
@@ -146,12 +146,12 @@ export default function Preuves() {
                       overflow: "hidden",
                       aspectRatio: "16/10",
                       cursor: "zoom-in",
-                      border: "1px solid #EAEAEA",
+                      border: "1px solid var(--black-line)",
                       transition: "transform 0.2s, box-shadow 0.2s",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = "translateY(-4px)";
-                      e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.1)";
+                      e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.5)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = "translateY(0)";
@@ -181,7 +181,7 @@ export default function Preuves() {
                   </div>
                   {/* Label + Tag */}
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
-                    <span style={{ fontSize: 13, color: "var(--black-mid)", lineHeight: 1.4, flex: 1 }}>
+                    <span style={{ fontSize: 13, color: "var(--white-muted)", lineHeight: 1.4, flex: 1 }}>
                       {c.label}
                     </span>
                     <span style={{

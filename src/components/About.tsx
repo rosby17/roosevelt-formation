@@ -21,8 +21,8 @@ export default function About() {
       id="about"
       style={{
         padding: "120px 0",
-        background: "var(--white)",
-        borderTop: "1px solid #EAEAEA",
+        background: "var(--black-card)",
+        borderTop: "1px solid var(--black-line)",
       }}
     >
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px" }}>
@@ -31,15 +31,14 @@ export default function About() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            border: "1px solid #EAEAEA",
+            border: "1px solid var(--black-line)",
             borderRadius: 32,
             overflow: "hidden",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.04)",
           }}
           className="about-grid"
         >
           {/* Photo */}
-          <div style={{ position: "relative", minHeight: 520, background: "#F5F5F5" }}>
+          <div style={{ position: "relative", minHeight: 520, background: "var(--black-mid)" }}>
             <Image
               src="/photo.png"
               alt="Roosevelt Mogo"
@@ -64,8 +63,7 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              background: "var(--white)",
-              borderLeft: "1px solid #EAEAEA",
+              borderLeft: "1px solid var(--black-line)",
             }}
           >
             {/* Eyebrow */}
@@ -93,7 +91,7 @@ export default function About() {
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.08,
-                color: "var(--black)",
+                color: "var(--white)",
                 marginBottom: 16,
               }}
             >
@@ -102,7 +100,7 @@ export default function About() {
               <em style={{ fontStyle: "italic", color: "var(--red)" }}>Du vécu.</em>
             </h2>
 
-            <p style={{ fontSize: 15, color: "var(--black-mid)", lineHeight: 1.8, marginTop: 4 }}>
+            <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginTop: 4 }}>
               Je m&apos;appelle Roosevelt Mogo, créateur de contenu sur YouTube faceless depuis plus de 3 ans aujourd&apos;hui.
               J&apos;ai construit plusieurs chaînes YouTube dans différentes niches,
               généré plus de 45 000€ de revenus et décroché le Trophée YouTube des 100 000 abonnés.
@@ -120,7 +118,7 @@ export default function About() {
                       marginTop: 8, flexShrink: 0,
                     }}
                   />
-                  <span style={{ fontSize: 15, color: "var(--black-mid)", lineHeight: 1.6, fontWeight: 500 }}>{f}</span>
+                  <span style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.6 }}>{f}</span>
                 </li>
               ))}
             </ul>
@@ -131,8 +129,8 @@ export default function About() {
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: 1,
-                background: "#EAEAEA",
-                border: "1px solid #EAEAEA",
+                background: "var(--black-line)",
+                border: "1px solid var(--black-line)",
                 borderRadius: 12,
                 overflow: "hidden",
               }}
@@ -141,7 +139,7 @@ export default function About() {
                 <div
                   key={m.num}
                   style={{
-                    background: "var(--white)",
+                    background: "var(--black-card)",
                     padding: "24px 20px",
                     textAlign: "center",
                   }}
@@ -160,7 +158,7 @@ export default function About() {
                   >
                     {m.num}
                   </div>
-                  <div style={{ fontSize: 12, color: "var(--black-mid)", fontWeight: 600, marginTop: 6 }}>
+                  <div style={{ fontSize: 12, color: "var(--white-dim)", marginTop: 6 }}>
                     {m.label}
                   </div>
                 </div>
