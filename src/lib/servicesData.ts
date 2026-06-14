@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     desc: "Profite de toutes les fonctionnalités premiums de CapCut Pro pour le montage de tes vidéos faceless à un tarif ultra-réduit grâce à notre offre d'abonnement partagé.",
     badge: "Montage Vidéo",
     price: "4 000 FCFA/mois",
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-0/checkout",
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout",
     image: "/services/capcut.png",
     iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
