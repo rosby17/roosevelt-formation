@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { SITE } from "@/lib/data";
 
+import Image from "next/image";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -48,6 +50,9 @@ export default function Navbar() {
         <Link
           href="/"
           style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
             fontFamily: "var(--font-display)",
             fontSize: 20,
             fontWeight: 700,
@@ -55,7 +60,16 @@ export default function Navbar() {
             textDecoration: "none",
           }}
         >
-          Roosevelt <span style={{ color: "var(--red)" }}>Mogo</span>
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={32}
+            height={32}
+            style={{ borderRadius: "50%", objectFit: "contain" }}
+          />
+          <span>
+            Roosevelt <span style={{ color: "var(--red)" }}>Mogo</span>
+          </span>
         </Link>
 
         {/* Desktop links */}
