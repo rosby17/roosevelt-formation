@@ -68,7 +68,7 @@ export default function Hero() {
               color: "var(--red)",
             }}
           >
-            Formation · Cameroun &amp; Afrique francophone
+            Accompagnement · Cameroun &amp; Afrique francophone
           </span>
         </div>
 
@@ -144,7 +144,8 @@ export default function Hero() {
               e.currentTarget.style.background = "var(--red)";
             }}
           >
-            🎯 Session Live — 50 000 FCFA
+            Session Live — 50 000 FCFA
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a
             href={SITE.offers.replay.url}
@@ -173,7 +174,7 @@ export default function Hero() {
               e.currentTarget.style.borderColor = "var(--black-line)";
             }}
           >
-            📺 Replay — 10 000 FCFA
+            Replay — 10 000 FCFA
           </a>
         </div>
 

@@ -48,7 +48,7 @@ export default function Faq() {
             </p>
             <a
               href={`${SITE.socials.whatsapp}?text=${encodeURIComponent(
-                "Bonjour Roosevelt, j'ai une question sur ta formation YouTube."
+                "Bonjour Roosevelt, j'ai une question sur ton accompagnement YouTube."
               )}`}
               target="_blank"
               rel="noopener noreferrer"

@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Roosevelt Mogo",
-  tagline: "Formation YouTube Monétisation",
+  tagline: "Accompagnement YouTube Monétisation",
   description:
-    "Crée et monétise ta chaîne YouTube depuis l'Afrique francophone. 10 modules, avatars IA, stratégie multi-chaînes.",
+    "Développe et monétise ta chaîne YouTube depuis l'Afrique francophone. 10 modules, avatars IA, stratégie multi-chaînes.",
   url: "https://formation.tools-cl.com",
   socials: {
     youtube: "https://www.youtube.com/@rooseveltmogo",
@@ -101,18 +101,43 @@ export const LIVE_FEATURES = [
   { ok: true, text: "Suivi post-session via WhatsApp" },
 ];
 
+// icon = SVG path data (Heroicons outline)
 export const RESULTS = [
-  { icon: "🔐", title: "Chaîne créée et sécurisée", desc: "Compte Google dédié, authentification renforcée, paramètres corrects dès le départ." },
-  { icon: "💰", title: "Monétisation configurée", desc: "Pays éligible, déclarations correctes, YouTube Studio optimisé pour les revenus." },
-  { icon: "🎯", title: "Niche rentable identifiée", desc: "Tu appliques les critères de sélection pour trouver une niche adaptée à ton profil." },
-  { icon: "🤖", title: "Avatars IA maîtrisés", desc: "Produire des vidéos sans montrer ton visage, avec des outils accessibles depuis l'Afrique." },
-  { icon: "📈", title: "RPM compris et maximisé", desc: "Tu sais quel contenu, quelle audience et quel pays génèrent les meilleurs revenus par vue." },
-  { icon: "🌍", title: "Multi-chaînes opérationnel", desc: "Gérer plusieurs chaînes simultanément, tester des niches et réinvestir les gains." },
+  {
+    icon: "shield",
+    title: "Chaîne créée et sécurisée",
+    desc: "Compte Google dédié, authentification renforcée, paramètres corrects dès le départ.",
+  },
+  {
+    icon: "banknotes",
+    title: "Monétisation configurée",
+    desc: "Pays éligible, déclarations correctes, YouTube Studio optimisé pour les revenus.",
+  },
+  {
+    icon: "crosshairs",
+    title: "Niche rentable identifiée",
+    desc: "Tu appliques les critères de sélection pour trouver une niche adaptée à ton profil.",
+  },
+  {
+    icon: "cpu",
+    title: "Avatars IA maîtrisés",
+    desc: "Produire des vidéos sans montrer ton visage, avec des outils accessibles depuis l'Afrique.",
+  },
+  {
+    icon: "chart",
+    title: "RPM compris et maximisé",
+    desc: "Tu sais quel contenu, quelle audience et quel pays génèrent les meilleurs revenus par vue.",
+  },
+  {
+    icon: "globe",
+    title: "Multi-chaînes opérationnel",
+    desc: "Gérer plusieurs chaînes simultanément, tester des niches et réinvestir les gains.",
+  },
 ];
 
 export const FAQS = [
   {
-    q: "Est-ce que cette formation convient à un vrai débutant ?",
+    q: "Est-ce que cet accompagnement convient à un vrai débutant ?",
     a: "Oui, complètement. On commence depuis la création du compte Google. Tu n'as besoin d'aucune expérience préalable en création de contenu, en montage vidéo ou en technique YouTube.",
   },
   {
@@ -121,7 +146,7 @@ export const FAQS = [
   },
   {
     q: "Peut-on vraiment gagner de l'argent sur YouTube depuis le Cameroun ?",
-    a: "Oui — et j'en suis la preuve. La clé c'est de choisir le bon pays de monétisation et de cibler les bonnes audiences. La formation explique précisément quels pays choisir et comment travailler avec des niches à fort RPM, y compris des audiences anglophones.",
+    a: "Oui — et j'en suis la preuve. La clé c'est de choisir le bon pays de monétisation et de cibler les bonnes audiences. On voit précisément quels pays choisir et comment travailler avec des niches à fort RPM, y compris des audiences anglophones.",
   },
   {
     q: "Est-ce que je dois avoir une caméra ou du matériel ?",

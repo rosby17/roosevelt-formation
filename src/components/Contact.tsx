@@ -30,7 +30,7 @@ const socials = [
 
 export default function Contact() {
   const waMsg = encodeURIComponent(
-    "Bonjour Roosevelt, je suis intéressé par ta formation YouTube."
+    "Bonjour Roosevelt, je suis intéressé par ton accompagnement YouTube."
   );
 
   return (
@@ -187,7 +187,8 @@ export default function Contact() {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                🎯 Session Live — 50 000 FCFA
+                Session Live — 50 000 FCFA
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
 
               <a
@@ -212,7 +213,8 @@ export default function Contact() {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                📺 Replay — 10 000 FCFA
+                Replay — 10 000 FCFA
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
 
               <div style={{

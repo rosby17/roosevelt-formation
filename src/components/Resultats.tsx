@@ -1,6 +1,48 @@
 "use client";
 import { RESULTS } from "@/lib/data";
 
+// Heroicons outline — clean SVG paths
+const ICONS: Record<string, React.ReactNode> = {
+  shield: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+    </svg>
+  ),
+  banknotes: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="6" width="20" height="12" rx="2"/>
+      <circle cx="12" cy="12" r="2.5"/>
+      <path d="M6 12h.01M18 12h.01"/>
+    </svg>
+  ),
+  crosshairs: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="8"/>
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+    </svg>
+  ),
+  cpu: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="6" y="6" width="12" height="12" rx="1.5"/>
+      <path d="M9 6V4M12 6V4M15 6V4M9 20v-2M12 20v-2M15 20v-2M6 9H4M6 12H4M6 15H4M20 9h-2M20 12h-2M20 15h-2"/>
+    </svg>
+  ),
+  chart: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 17l4-6 4 3 4-7 4 4"/>
+      <path d="M3 21h18"/>
+    </svg>
+  ),
+  globe: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M3.6 9h16.8M3.6 15h16.8"/>
+      <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
+    </svg>
+  ),
+};
+
 export default function Resultats() {
   return (
     <section id="resultats" style={{ padding: "120px 0", background: "var(--black)" }}>
@@ -37,7 +79,7 @@ export default function Resultats() {
             </h2>
           </div>
           <p style={{ fontSize: 16, color: "var(--white-muted)", lineHeight: 1.75 }}>
-            La formation n&apos;est pas théorique. Chaque module produit un résultat concret
+            L&apos;accompagnement n&apos;est pas théorique. Chaque module produit un résultat concret
             que tu peux appliquer le jour même.
           </p>
         </div>
@@ -63,13 +105,24 @@ export default function Resultats() {
                 padding: "40px 32px",
                 display: "flex",
                 flexDirection: "column",
-                gap: 12,
+                gap: 14,
                 transition: "background 0.2s",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "var(--black-mid)")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "var(--black-card)")}
             >
-              <div style={{ fontSize: 32, marginBottom: 4 }}>{r.icon}</div>
+              {/* Icon container */}
+              <div style={{
+                width: 40, height: 40,
+                borderRadius: 10,
+                background: "rgba(200,16,46,0.1)",
+                border: "1px solid rgba(200,16,46,0.2)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "var(--red)",
+                flexShrink: 0,
+              }}>
+                {ICONS[r.icon]}
+              </div>
               <div style={{
                 fontFamily: "var(--font-display)",
                 fontSize: 17, fontWeight: 700,

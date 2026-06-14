@@ -52,7 +52,7 @@ export default function Offres() {
             subtitle={SITE.offers.replay.subtitle}
             features={REPLAY_FEATURES}
             href={SITE.offers.replay.url}
-            cta="Accéder aux Replays →"
+            cta="Accéder aux Replays"
             featured={false}
           />
 
@@ -64,7 +64,7 @@ export default function Offres() {
             subtitle={SITE.offers.live.subtitle}
             features={LIVE_FEATURES}
             href={SITE.offers.live.url}
-            cta="🎯 Réserver mon Live →"
+            cta="Réserver mon Live"
             featured={true}
           />
         </div>
@@ -75,7 +75,7 @@ export default function Offres() {
             Des questions avant d&apos;acheter ?{" "}
             <a
               href={`${SITE.socials.whatsapp}?text=${encodeURIComponent(
-                "Bonjour Roosevelt, j'ai des questions sur ta formation YouTube."
+                "Bonjour Roosevelt, j'ai des questions sur ton accompagnement YouTube."
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -237,6 +237,7 @@ function OfferCard({
         }}
       >
         {cta}
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   );
