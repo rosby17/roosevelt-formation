@@ -8,7 +8,7 @@ export default function Hero() {
       style={{
         minHeight: "100vh",
         display: "grid",
-        gridTemplateColumns: "1fr 480px",
+        gridTemplateColumns: "480px 1fr",  // ← photo à gauche, texte à droite
         paddingTop: 80,
         overflow: "hidden",
         position: "relative",
@@ -21,208 +21,12 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 60% at 10% 50%, rgba(200,16,46,0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 60% at 90% 50%, rgba(200,16,46,0.07) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
 
-      {/* Left — text */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px 60px 80px 28px",
-          maxWidth: 760,
-          marginLeft: "auto",
-          paddingLeft: "max(28px, calc((100vw - 1120px) / 2 + 28px))",
-          borderRight: "1px solid var(--black-line)",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {/* Eyebrow */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            marginBottom: 28,
-            animation: "fadeUp 0.65s ease both 0s",
-          }}
-        >
-          <div
-            style={{
-              width: 8, height: 8,
-              borderRadius: "50%",
-              background: "var(--red)",
-              flexShrink: 0,
-            }}
-          />
-          <span
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "var(--red)",
-            }}
-          >
-            Accompagnement · Cameroun &amp; Afrique francophone
-          </span>
-        </div>
-
-        {/* Title */}
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(42px, 5.5vw, 72px)",
-            fontWeight: 900,
-            lineHeight: 1.03,
-            letterSpacing: "-0.02em",
-            color: "var(--white)",
-            marginBottom: 24,
-            animation: "fadeUp 0.65s ease both 0.1s",
-          }}
-        >
-          YouTube,
-          <br />
-          <em style={{ fontStyle: "italic", color: "var(--red)" }}>monétisé.</em>
-          <br />
-          Sans audience.
-        </h1>
-
-        {/* Subtitle */}
-        <p
-          style={{
-            fontSize: 17,
-            color: "var(--white-muted)",
-            lineHeight: 1.75,
-            maxWidth: 460,
-            marginBottom: 48,
-            animation: "fadeUp 0.65s ease both 0.2s",
-          }}
-        >
-          Crée, configure et développe une chaîne qui génère des revenus réels —
-          niches rentables, avatars IA, stratégie multi-chaînes. J&apos;ai fait les erreurs pour toi.
-        </p>
-
-        {/* CTAs */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 12,
-            marginBottom: 64,
-            animation: "fadeUp 0.65s ease both 0.3s",
-          }}
-        >
-          <a
-            href={SITE.offers.live.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "var(--red)",
-              color: "#fff",
-              fontSize: 15,
-              fontWeight: 600,
-              padding: "14px 32px",
-              borderRadius: 6,
-              textDecoration: "none",
-              boxShadow: "0 4px 20px rgba(200,16,46,0.3)",
-              transition: "transform 0.15s, background 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.background = "var(--red-dim)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.background = "var(--red)";
-            }}
-          >
-            Session Live — 50 000 FCFA
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a
-            href={SITE.offers.replay.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "transparent",
-              color: "var(--white)",
-              fontSize: 15,
-              fontWeight: 600,
-              padding: "14px 32px",
-              borderRadius: 6,
-              border: "1px solid var(--black-line)",
-              textDecoration: "none",
-              transition: "transform 0.15s, border-color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.borderColor = "var(--white-dim)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "var(--black-line)";
-            }}
-          >
-            Replay — 10 000 FCFA
-          </a>
-        </div>
-
-        {/* Stats */}
-        <div
-          style={{
-            display: "flex",
-            gap: 40,
-            paddingTop: 40,
-            borderTop: "1px solid var(--black-line)",
-            flexWrap: "wrap",
-            animation: "fadeUp 0.65s ease both 0.4s",
-          }}
-        >
-          {[
-            { num: "10", label: "Modules\ncomplets" },
-            { num: "1 000", label: "Abonnés\nobjectif" },
-            { num: "0 €", label: "Équipement\nrequis" },
-          ].map((s) => (
-            <div key={s.num}>
-              <div
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 32,
-                  fontWeight: 900,
-                  color: "var(--white)",
-                  lineHeight: 1,
-                }}
-              >
-                {s.num}
-              </div>
-              <div
-                style={{
-                  fontSize: 13,
-                  color: "var(--white-dim)",
-                  marginTop: 4,
-                  lineHeight: 1.4,
-                  whiteSpace: "pre-line",
-                }}
-              >
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Right — photo */}
+      {/* Left — photo */}
       <div
         style={{
           position: "relative",
@@ -299,12 +103,218 @@ export default function Hero() {
         </div>
       </div>
 
-      <style>{`
+      {/* Right — text */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "80px 60px 80px 60px",
+          borderLeft: "1px solid var(--black-line)",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* Eyebrow */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            marginBottom: 28,
+            animation: "fadeUp 0.65s ease both 0s",
+          }}
+        >
+          <div
+            style={{
+              width: 8, height: 8,
+              borderRadius: "50%",
+              background: "var(--red)",
+              flexShrink: 0,
+            }}
+          />
+          <span
+            style={{
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--red)",
+            }}
+          >
+            Accompagnement · Cameroun & Afrique Francophone
+          </span>
+        </div>
+
+        {/* Title */}
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(42px, 5.5vw, 72px)",
+            fontWeight: 900,
+            lineHeight: 1.03,
+            letterSpacing: "-0.02em",
+            color: "var(--white)",
+            marginBottom: 24,
+            animation: "fadeUp 0.65s ease both 0.1s",
+          }}
+        >
+          YouTube,
+          <br />
+          <em style={{ fontStyle: "italic", color: "var(--red)" }}>monétisé.</em>
+          <br />
+          Sans audience.
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          style={{
+            fontSize: 17,
+            color: "var(--white-muted)",
+            lineHeight: 1.75,
+            maxWidth: 460,
+            marginBottom: 48,
+            animation: "fadeUp 0.65s ease both 0.2s",
+          }}
+        >
+          Crée, configure et développe une chaîne qui génère des revenus réels —
+          niches rentables, avatars IA, stratégie multi-chaînes. J&apos;ai fait les erreurs pour toi.
+        </p>
+
+        {/* CTAs */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+            marginBottom: 64,
+            animation: "fadeUp 0.65s ease both 0.3s",
+          }}
+        >
+          {/* Bouton Session Live avec icône Google Meet */}
+          <a
+            href={SITE.offers.live.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              background: "var(--red)",
+              color: "#fff",
+              fontSize: 15,
+              fontWeight: 600,
+              padding: "14px 28px",
+              borderRadius: 6,
+              textDecoration: "none",
+              boxShadow: "0 4px 20px rgba(200,16,46,0.3)",
+              transition: "transform 0.15s, background 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.background = "var(--red-dim)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.background = "var(--red)";
+            }}
+          >
+            {/* Icône Google Meet SVG officielle */}
+            <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#fff" d="M29 10H13C10.8 10 9 11.8 9 14v20c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4z" />
+              <path fill="rgba(255,255,255,0.3)" d="M33 18l6-4v20l-6-4V18z" />
+            </svg>
+            Session Live — 50 000 FCFA
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+
+          {/* Bouton Replay */}
+          <a
+            href={SITE.offers.replay.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "transparent",
+              color: "var(--white)",
+              fontSize: 15,
+              fontWeight: 600,
+              padding: "14px 32px",
+              borderRadius: 6,
+              border: "1px solid var(--black-line)",
+              textDecoration: "none",
+              transition: "transform 0.15s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.borderColor = "var(--white-dim)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.borderColor = "var(--black-line)";
+            }}
+          >
+            Replay — 10 000 FCFA
+          </a>
+    </div>
+
+        {/* Stats */ }
+  <div
+    style={{
+      display: "flex",
+      gap: 40,
+      paddingTop: 40,
+      borderTop: "1px solid var(--black-line)",
+      flexWrap: "wrap",
+      animation: "fadeUp 0.65s ease both 0.4s",
+    }}
+  >
+    {[
+      { num: "10", label: "Modules\ncomplets" },
+      { num: "1 000", label: "Abonnés\nobjectif" },
+      { num: "0 €", label: "Équipement\nrequis" },
+    ].map((s) => (
+      <div key={s.num}>
+        <div
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: 32,
+            fontWeight: 900,
+            color: "var(--white)",
+            lineHeight: 1,
+          }}
+        >
+          {s.num}
+        </div>
+        <div
+          style={{
+            fontSize: 13,
+            color: "var(--white-dim)",
+            marginTop: 4,
+            lineHeight: 1.4,
+            whiteSpace: "pre-line",
+          }}
+        >
+          {s.label}
+        </div>
+      </div>
+    ))}
+  </div>
+      </div >
+
+    <style>{`
         @media (max-width: 900px) {
           header { grid-template-columns: 1fr !important; }
-          .hero-photo-panel { display: none !important; }
+          .hero-photo-panel { 
+            min-height: 60vh;
+            display: flex !important;
+          }
         }
       `}</style>
-    </header>
+    </header >
   );
 }
