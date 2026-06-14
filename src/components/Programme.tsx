@@ -98,14 +98,15 @@ function ModuleCard({
     >
       <div
         style={{
-          fontFamily: "var(--font-display)",
-          fontSize: 48,
-          fontWeight: 900,
-          color: "rgba(200,16,46,0.18)",
+          fontFamily: "var(--font-body)",
+          fontSize: 36,
+          fontWeight: 800,
+          color: "var(--red)",
+          opacity: 0.85,
           lineHeight: 1,
-          marginBottom: 20,
-          letterSpacing: "-0.03em",
-          transition: "color 0.2s",
+          marginBottom: 16,
+          letterSpacing: "-0.01em",
+          transition: "all 0.2s",
         }}
         className="prog-num"
       >
@@ -113,17 +114,17 @@ function ModuleCard({
       </div>
       <div
         style={{
-          fontFamily: "var(--font-display)",
-          fontSize: 17,
+          fontFamily: "var(--font-body)",
+          fontSize: 18,
           fontWeight: 700,
           color: "var(--white)",
           marginBottom: 10,
-          lineHeight: 1.3,
+          lineHeight: 1.35,
         }}
       >
         {title}
       </div>
-      <div style={{ fontSize: 13, color: "var(--white-dim)", lineHeight: 1.6 }}>
+      <div style={{ fontSize: 14, color: "var(--white-muted)", lineHeight: 1.6 }}>
         {desc}
       </div>
     </div>
