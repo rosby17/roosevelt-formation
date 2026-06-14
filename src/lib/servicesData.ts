@@ -50,7 +50,7 @@ export const SERVICES: Service[] = [
     badge: "Montage Vidéo",
     price: "À partir de 3 000 FCFA/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5-7",
-    image: "/roosevelt.jpg",
+    image: "/capcut.png",
     iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
   {
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
     badge: "IA & Avatar",
     price: "À partir de 3 000 FCFA/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5-7",
-    image: "/roosevelt.jpg",
+    image: "/heygen.png",
     iconPath: "M12 2a10 10 0 1 0 10 10H12V2z M12 2a10 10 0 0 1 10 10",
   },
   {
