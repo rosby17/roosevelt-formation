@@ -95,8 +95,8 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.2s",
           }}
         >
-          Crée, configure et développe une chaîne qui génère des revenus réels —
-          niches rentables, avatars IA, stratégie multi-chaînes.
+          Crée, configure et développe une chaîne qui génère des revenus réels
+          niches rentables, avec ou sans IA, stratégie multi-chaînes.
         </p>
 
         {/* CTAs */}
