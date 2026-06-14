@@ -199,19 +199,36 @@ export default function Hero() {
             overflow: "hidden",
             boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
             border: "1px solid var(--black-line)",
+            background: "var(--black-card)",
             animation: "fadeUp 0.65s ease both 0.4s",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
           }}
         >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/3VnxBDg3374?si=1bT0a9q0RzX0oR_h"
-            title="Présentation Roosevelt Mogo"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
+          {SITE.heroVideo ? (
+            <iframe
+              width="100%"
+              height="100%"
+              src={SITE.heroVideo}
+              title="Présentation Roosevelt Mogo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0 }}
+            ></iframe>
+          ) : (
+            <div style={{ textAlign: "center", color: "var(--white-dim)", padding: 32 }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ margin: "0 auto 16px", opacity: 0.5 }}>
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: "var(--white-muted)", marginBottom: 8 }}>Zone réservée pour la vidéo</h3>
+              <p style={{ fontSize: 14 }}>Ajoute l&apos;URL de ta vidéo dans <code>src/lib/data.ts</code> (champ <code>heroVideo</code>)</p>
+            </div>
+          )}
         </div>
       </div>
     </header>
