@@ -4,7 +4,7 @@ export const SITE = {
   description:
     "Développe et monétise ta chaîne YouTube. 10 modules, avatars IA, stratégie multi-chaînes, sans audience de départ.",
   url: "https://formation.tools-cl.com",
-  heroVideo: "https://www.youtube.com/watch?v=3VnxBDg3374&t=200s", // Mettre l'URL d'intégration YouTube ici (ex: https://www.youtube.com/embed/...)
+  heroVideo: "", // Mettre l'URL d'intégration YouTube ici (ex: https://www.youtube.com/watch?v=3VnxBDg3374&t=200s...)
   socials: {
     youtube: "https://www.youtube.com/@rooseveltmogo",
     facebook: "https://www.facebook.com/rooseveltmogo17",
