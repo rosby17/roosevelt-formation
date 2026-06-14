@@ -12,7 +12,7 @@ import { useState } from "react";
 //   tag   : badge coloré (ex: "Abonnés", "Revenus", "Monétisation")
 
 const CAPTURES: { src: string; label: string; tag: string }[] = [
-  { src: "/preuves/chaine-1.jpeg", label: "Monétisation atteinte en 6 semaines", tag: "Monétisation" },
+  { src: "/preuves/chaine-1.jpeg", label: "25 000€ générés avec ma chaine où j'ai eu le trophé des 100k d'abonnés", tag: "Monétisation" },
   { src: "/preuves/chaine-2.jpeg", label: "1 200 abonnés en 30 jours", tag: "Abonnés" },
   { src: "/preuves/chaine-3.jpeg", label: "Revenu en 3 jours de monetisation chaine lancé en 2 semaines", tag: "Revenus" },
 
