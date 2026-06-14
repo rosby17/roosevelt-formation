@@ -181,66 +181,102 @@ export default function Contact() {
                 Les places pour les sessions Live sont limitées.
               </p>
 
+              {/* Premium Live CTA */}
               <a
                 href={SITE.offers.live.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: "flex", justifyContent: "center", alignItems: "center",
-                  width: "100%", padding: "14px 32px",
-                  background: "var(--red)", color: "#fff",
-                  borderRadius: 6, fontSize: 15, fontWeight: 600,
-                  textDecoration: "none", marginBottom: 12,
-                  boxShadow: "0 4px 20px rgba(200,16,46,0.3)",
-                  transition: "background 0.2s, transform 0.15s",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 16,
+                  background: "linear-gradient(135deg, var(--red) 0%, #d80b2a 100%)",
+                  color: "#fff",
+                  padding: "16px 28px",
+                  borderRadius: 14,
+                  textDecoration: "none",
+                  marginBottom: 12,
+                  boxShadow: "0 8px 24px rgba(200, 16, 46, 0.35), inset 0 1px 0 rgba(255,255,255,0.2)",
+                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                  border: "1px solid rgba(255,255,255,0.1)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "var(--red-dim)";
-                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
+                  e.currentTarget.style.boxShadow = "0 12px 32px rgba(200, 16, 46, 0.45), inset 0 1px 0 rgba(255,255,255,0.3)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "var(--red)";
-                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px rgba(200, 16, 46, 0.35), inset 0 1px 0 rgba(255,255,255,0.2)";
                 }}
               >
-                <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
-                  <span style={{ fontSize: 11, opacity: 0.7, textDecoration: "line-through", lineHeight: 1 }}>
-                    {SITE.offers.live.currency} {SITE.offers.live.originalPrice}
-                  </span>
-                  <span>Session Live — {SITE.offers.live.currency} {SITE.offers.live.price}</span>
-                </span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.15)", padding: 6, borderRadius: 8 }}>
+                  <svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" d="M29 10H13C10.8 10 9 11.8 9 14v20c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4z" />
+                    <path fill="rgba(255,255,255,0.3)" d="M33 18l6-4v20l-6-4V18z" />
+                  </svg>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.9 }}>
+                    <span>Session Live</span>
+                    <span style={{ background: "rgba(0,0,0,0.3)", padding: "1px 5px", borderRadius: 4, textDecoration: "line-through", fontSize: 9 }}>
+                      {SITE.offers.live.originalPrice} {SITE.offers.live.currency}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 16, fontWeight: 800, marginTop: 1 }}>
+                    {SITE.offers.live.price} {SITE.offers.live.currency}
+                  </div>
+                </div>
               </a>
 
+              {/* Premium Replay CTA */}
               <a
                 href={SITE.offers.replay.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: "flex", justifyContent: "center", alignItems: "center",
-                  width: "100%", padding: "14px 32px",
-                  background: "transparent", color: "var(--white)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 16,
+                  background: "rgba(255, 255, 255, 0.03)",
+                  color: "var(--white)",
+                  padding: "16px 28px",
+                  borderRadius: 14,
                   border: "1px solid var(--black-line)",
-                  borderRadius: 6, fontSize: 15, fontWeight: 600,
                   textDecoration: "none",
-                  transition: "border-color 0.2s, transform 0.15s",
+                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                 }}
                 onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-4px) scale(1.02)";
                   e.currentTarget.style.borderColor = "var(--white-dim)";
-                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.07)";
+                  e.currentTarget.style.boxShadow = "0 12px 24px rgba(0, 0, 0, 0.3)";
                 }}
                 onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
                   e.currentTarget.style.borderColor = "var(--black-line)";
-                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
                 }}
               >
-                <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
-                  <span style={{ fontSize: 11, opacity: 0.55, textDecoration: "line-through", lineHeight: 1 }}>
-                    {SITE.offers.replay.currency} {SITE.offers.replay.originalPrice}
-                  </span>
-                  <span>Replay — {SITE.offers.replay.currency} {SITE.offers.replay.price}</span>
-                </span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(255,255,255,0.06)", padding: 6, borderRadius: 8 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.8 }}>
+                    <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                  </svg>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.7 }}>
+                    <span>Replay enregistré</span>
+                    <span style={{ opacity: 0.6, textDecoration: "line-through", fontSize: 9 }}>
+                      {SITE.offers.replay.originalPrice} {SITE.offers.replay.currency}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 16, fontWeight: 800, marginTop: 1 }}>
+                    {SITE.offers.replay.price} {SITE.offers.replay.currency}
+                  </div>
+                </div>
               </a>
 
               <div style={{
