@@ -1,6 +1,19 @@
 "use client";
 import { SITE } from "@/lib/data";
 
+const getEmbedUrl = (url: string) => {
+  if (!url) return "";
+  let videoId = "";
+  if (url.includes("youtube.com/watch?v=")) {
+    videoId = url.split("v=")[1].split("&")[0];
+  } else if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1].split("?")[0];
+  } else if (url.includes("youtube.com/embed/")) {
+    return url;
+  }
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+};
+
 export default function Hero() {
   return (
     <header
@@ -211,7 +224,7 @@ export default function Hero() {
             <iframe
               width="100%"
               height="100%"
-              src={SITE.heroVideo}
+              src={getEmbedUrl(SITE.heroVideo)}
               title="Présentation Roosevelt Mogo"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
