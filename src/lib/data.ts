@@ -89,8 +89,8 @@ export const REPLAY_FEATURES = [
   { ok: true,  text: "Avance à ton propre rythme" },
   { ok: true,  text: "Rejoue chaque leçon autant de fois que nécessaire" },
   { ok: true,  text: "Tu vois les vraies questions posées par d'autres apprenants" },
-  { ok: false, text: "Pas de session en direct" },
-  { ok: false, text: "Pas de feedback personnalisé" },
+  { ok: true,  text: "Suivi post-formation via WhatsApp" },
+  { ok: false, text: "Pas de session en direct sur Google Meet" },
 ];
 
 export const LIVE_FEATURES = [
@@ -102,6 +102,7 @@ export const LIVE_FEATURES = [
   { ok: true, text: "Accès au replay de ta propre session live" },
   { ok: true, text: "Suivi post-session via WhatsApp" },
 ];
+
 
 // icon = SVG path data (Heroicons outline)
 export const RESULTS = [
