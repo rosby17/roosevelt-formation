@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Roosevelt Mogo",
-  tagline: "Accompagnement YouTube Monétisation",
+  tagline: "Accompagnement YouTube",
   description:
     "Développe et monétise ta chaîne YouTube. 10 modules, avatars IA, stratégie multi-chaînes, sans audience de départ.",
   url: "https://formation.tools-cl.com",
@@ -14,7 +14,7 @@ export const SITE = {
     replay: {
       label: "Replay",
       originalPrice: "20 000",
-      price: "9 900",
+      price: "9 950",
       currency: "FCFA",
       subtitle: "Sessions enregistrées avec d'autres apprenants",
       url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5/checkout",
@@ -22,7 +22,7 @@ export const SITE = {
     live: {
       label: "Live Google Meet",
       originalPrice: "75 000",
-      price: "49 000",
+      price: "49 550",
       currency: "FCFA",
       subtitle: "Session interactive en direct avec Roosevelt",
       url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-6/checkout",
@@ -84,12 +84,12 @@ export const MODULES = [
 ];
 
 export const REPLAY_FEATURES = [
-  { ok: true,  text: "Accès immédiat à tous les modules enregistrés" },
-  { ok: true,  text: "Programme complet des 10 blocs thématiques" },
-  { ok: true,  text: "Avance à ton propre rythme" },
-  { ok: true,  text: "Rejoue chaque leçon autant de fois que nécessaire" },
-  { ok: true,  text: "Tu vois les vraies questions posées par d'autres apprenants" },
-  { ok: true,  text: "Suivi post-formation via WhatsApp" },
+  { ok: true, text: "Accès immédiat à tous les modules enregistrés" },
+  { ok: true, text: "Programme complet des 10 blocs thématiques" },
+  { ok: true, text: "Avance à ton propre rythme" },
+  { ok: true, text: "Rejoue chaque leçon autant de fois que nécessaire" },
+  { ok: true, text: "Tu vois les vraies questions posées par d'autres apprenants" },
+  { ok: true, text: "Suivi post-formation via WhatsApp" },
   { ok: false, text: "Pas de session en direct sur Google Meet" },
 ];
 

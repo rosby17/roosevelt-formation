@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export interface Service {
   id: string;
   title: string;
@@ -9,6 +7,7 @@ export interface Service {
   checkoutUrl: string;
   image: string;
   iconPath: string; // fallback SVG path if image is missing
+  contactOnly?: boolean; // si true, affiche "Me contacter" au lieu du bouton checkout
 }
 
 export const SERVICES: Service[] = [
@@ -19,7 +18,7 @@ export const SERVICES: Service[] = [
     badge: "Indispensable",
     price: "2 500 FCFA",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/validation-de-numero-de-telephone-de-chaine/checkout",
-    image: "/logo.png",
+    image: "/validation.png",
     iconPath: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
   },
   {
@@ -28,8 +27,9 @@ export const SERVICES: Service[] = [
     desc: "Tu résides dans un pays non éligible ? Nous t'aidons à associer ton compte YouTube à un compte Google AdSense valide et vérifié dans un pays éligible pour percevoir tes revenus sans blocage. Pourcentage de commission négocié lors du premier contact.",
     badge: "Monétisation",
     price: "20% à 40% de commission",
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/association-de-compte-adsense-youtube-eligible/checkout",
-    image: "/roosevelt.jpg",
+    checkoutUrl: "https://wa.me/237655306425",
+    contactOnly: true,
+    image: "/adsense.png",
     iconPath: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M12 4v16 M2 12h20",
   },
   {
@@ -38,8 +38,9 @@ export const SERVICES: Service[] = [
     desc: "Reçois tes gains de pages Facebook monétisées (étoiles, pubs in-stream) en associant un compte de paiement européen / international valide. Pourcentage de commission négocié lors du premier contact.",
     badge: "Facebook",
     price: "20% à 40% de commission",
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/configuration-de-compte-de-reglement-facebook/checkout",
-    image: "/roosevelt.jpg",
+    checkoutUrl: "https://wa.me/237655306425",
+    contactOnly: true,
+    image: "/facebook.png",
     iconPath: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
   },
   {
