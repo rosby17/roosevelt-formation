@@ -103,7 +103,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href={SITE.offers.replay.url}
+              href={SITE.offers.live.url}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -184,7 +184,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href={SITE.offers.replay.url}
+            href={SITE.offers.live.url}
             target="_blank"
             rel="noopener noreferrer"
             style={{
