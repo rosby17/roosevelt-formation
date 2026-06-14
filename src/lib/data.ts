@@ -13,14 +13,16 @@ export const SITE = {
   offers: {
     replay: {
       label: "Replay",
-      price: "10 000",
+      originalPrice: "20 000",
+      price: "9 900",
       currency: "FCFA",
       subtitle: "Sessions enregistrées avec d'autres apprenants",
       url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5/checkout",
     },
     live: {
       label: "Live Google Meet",
-      price: "50 000",
+      originalPrice: "75 000",
+      price: "49 000",
       currency: "FCFA",
       subtitle: "Session interactive en direct avec Roosevelt",
       url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-6/checkout",

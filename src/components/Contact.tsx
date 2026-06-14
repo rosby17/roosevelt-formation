@@ -187,7 +187,12 @@ export default function Contact() {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                Session Live — 50 000 FCFA
+                <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                  <span style={{ fontSize: 11, opacity: 0.7, textDecoration: "line-through", lineHeight: 1 }}>
+                    {SITE.offers.live.currency} {SITE.offers.live.originalPrice}
+                  </span>
+                  <span>Session Live — {SITE.offers.live.currency} {SITE.offers.live.price}</span>
+                </span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
 
@@ -213,7 +218,12 @@ export default function Contact() {
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                Replay — 10 000 FCFA
+                <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                  <span style={{ fontSize: 11, opacity: 0.55, textDecoration: "line-through", lineHeight: 1 }}>
+                    {SITE.offers.replay.currency} {SITE.offers.replay.originalPrice}
+                  </span>
+                  <span>Replay — {SITE.offers.replay.currency} {SITE.offers.replay.price}</span>
+                </span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
 

@@ -47,6 +47,7 @@ export default function Offres() {
           {/* Replay */}
           <OfferCard
             tag="Accès autonome · Replay"
+            originalPrice={SITE.offers.replay.originalPrice}
             price={SITE.offers.replay.price}
             currency={SITE.offers.replay.currency}
             subtitle={SITE.offers.replay.subtitle}
@@ -59,6 +60,7 @@ export default function Offres() {
           {/* Live */}
           <OfferCard
             tag="Accompagnement · Live Google Meet"
+            originalPrice={SITE.offers.live.originalPrice}
             price={SITE.offers.live.price}
             currency={SITE.offers.live.currency}
             subtitle={SITE.offers.live.subtitle}
@@ -103,9 +105,10 @@ export default function Offres() {
 }
 
 function OfferCard({
-  tag, price, currency, subtitle, features, href, cta, featured,
+  tag, originalPrice, price, currency, subtitle, features, href, cta, featured,
 }: {
   tag: string;
+  originalPrice?: string;
   price: string;
   currency: string;
   subtitle: string;
@@ -160,19 +163,49 @@ function OfferCard({
       </div>
 
       {/* Price */}
-      <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, lineHeight: 1, marginBottom: 8 }}>
-        <span style={{
-          fontSize: 24,
-          color: featured ? "rgba(255,255,255,0.7)" : "var(--white-muted)",
-          verticalAlign: "top",
-          marginTop: 8,
-          display: "inline-block",
-        }}>
-          {currency}{" "}
-        </span>
-        <span style={{ fontSize: 56, letterSpacing: "-0.03em", color: featured ? "#fff" : "var(--white)" }}>
-          {price}
-        </span>
+      <div style={{ marginBottom: 8 }}>
+        {/* Prix barré (ancrage) */}
+        {originalPrice && (
+          <div style={{
+            display: "flex", alignItems: "center", gap: 8, marginBottom: 6,
+          }}>
+            <span style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 18,
+              fontWeight: 700,
+              color: featured ? "rgba(255,255,255,0.4)" : "var(--white-dim)",
+              textDecoration: "line-through",
+              letterSpacing: "-0.01em",
+            }}>
+              {currency} {originalPrice}
+            </span>
+            <span style={{
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              background: featured ? "rgba(255,255,255,0.2)" : "var(--red-soft)",
+              color: featured ? "#fff" : "var(--red)",
+              border: featured ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(200,16,46,0.3)",
+              padding: "3px 8px", borderRadius: 99,
+            }}>
+              Promo
+            </span>
+          </div>
+        )}
+        {/* Prix actuel */}
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, lineHeight: 1 }}>
+          <span style={{
+            fontSize: 24,
+            color: featured ? "rgba(255,255,255,0.7)" : "var(--white-muted)",
+            verticalAlign: "top",
+            marginTop: 8,
+            display: "inline-block",
+          }}>
+            {currency}{" "}
+          </span>
+          <span style={{ fontSize: 56, letterSpacing: "-0.03em", color: featured ? "#fff" : "var(--white)" }}>
+            {price}
+          </span>
+        </div>
       </div>
       <div style={{
         fontSize: 15, marginBottom: 32,
