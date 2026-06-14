@@ -230,54 +230,87 @@ export default function ServiceDetailPage({ params }: PageProps) {
                       color: "inherit",
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: "space-between",
                       background: "var(--black-card)",
                       border: "1px solid var(--black-line)",
                       borderRadius: 16,
-                      padding: 24,
+                      overflow: "hidden",
                       transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = "var(--white-dim)";
                       e.currentTarget.style.transform = "translateY(-4px)";
+                      e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.borderColor = "var(--black-line)";
                       e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    <div>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                        <div style={{ color: "var(--red)", background: "rgba(200,16,46,0.1)", padding: 10, borderRadius: 10 }}>
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d={other.iconPath} />
-                          </svg>
-                        </div>
-                        <span style={{
-                          fontSize: 9,
-                          fontWeight: 700,
-                          color: "var(--red)",
-                          background: "rgba(200,16,46,0.08)",
-                          border: "1px solid rgba(200,16,46,0.2)",
-                          padding: "3px 8px",
-                          borderRadius: 99
-                        }}>
-                          {other.badge}
-                        </span>
+                    {/* Image en haut */}
+                    <div style={{
+                      position: "relative",
+                      width: "100%",
+                      aspectRatio: "16/9",
+                      background: "var(--black-mid)",
+                      overflow: "hidden",
+                      flexShrink: 0,
+                    }}>
+                      <Image
+                        src={other.image}
+                        alt={other.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.3) 100%)",
+                        pointerEvents: "none",
+                      }} />
+                      <span style={{
+                        position: "absolute",
+                        top: 10,
+                        right: 10,
+                        fontSize: 9,
+                        fontWeight: 700,
+                        letterSpacing: "0.06em",
+                        textTransform: "uppercase",
+                        color: "var(--red)",
+                        background: "rgba(255,255,255,0.92)",
+                        border: "1px solid rgba(200,16,46,0.25)",
+                        padding: "3px 8px",
+                        borderRadius: 99,
+                        backdropFilter: "blur(8px)",
+                        WebkitBackdropFilter: "blur(8px)",
+                      }}>
+                        {other.badge}
+                      </span>
+                    </div>
+
+                    {/* Corps */}
+                    <div style={{ padding: "16px 18px 0", flexGrow: 1 }}>
+                      <div style={{ color: "var(--red)", background: "rgba(200,16,46,0.1)", padding: 8, borderRadius: 8, display: "inline-flex", marginBottom: 12 }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d={other.iconPath} />
+                        </svg>
                       </div>
 
-                      <h3 style={{ fontSize: 16, fontWeight: 800, color: "var(--white)", marginBottom: 8 }}>
+                      <h3 style={{ fontSize: 15, fontWeight: 800, color: "var(--white)", marginBottom: 8, lineHeight: 1.3 }}>
                         {other.title}
                       </h3>
-                      
-                      <p style={{ fontSize: 13, color: "var(--white-muted)", lineHeight: 1.5, marginBottom: 16 }}>
+
+                      <p style={{ fontSize: 12, color: "var(--white-muted)", lineHeight: 1.55, marginBottom: 14 }}>
                         {other.desc.substring(0, 80)}...
                       </p>
                     </div>
 
-                    <div style={{ borderTop: "1px solid var(--black-line)", paddingTop: 16, display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                      <span style={{ fontSize: 11, color: "var(--white-dim)" }}>Tarif</span>
-                      <span style={{ fontSize: 15, fontWeight: 800, color: "var(--white)" }}>{other.price}</span>
+                    {/* Pied */}
+                    <div style={{ padding: "0 18px 16px" }}>
+                      <div style={{ borderTop: "1px solid var(--black-line)", paddingTop: 12, display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                        <span style={{ fontSize: 11, color: "var(--white-dim)" }}>Tarif</span>
+                        <span style={{ fontSize: 14, fontWeight: 800, color: "var(--white)" }}>{other.price}</span>
+                      </div>
                     </div>
                   </Link>
                 ))}
