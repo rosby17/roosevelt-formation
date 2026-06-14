@@ -40,7 +40,7 @@ export default function About() {
           {/* Photo */}
           <div style={{ position: "relative", minHeight: 520, background: "var(--black-mid)" }}>
             <Image
-              src="https://yt3.googleusercontent.com/ytc/AIdro_mPAHHBMO5KR3C0CDNqz9UFm_lDj03E3l0d3ERFGnXVWA=s900-c-k-c0x00ffffff-no-rj"
+              src="/photo.png"
               alt="Roosevelt Mogo"
               fill
               style={{ objectFit: "cover", objectPosition: "center top", filter: "grayscale(15%)" }}

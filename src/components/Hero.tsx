@@ -235,7 +235,7 @@ export default function Hero() {
         className="hero-photo-panel"
       >
         <Image
-          src="https://yt3.googleusercontent.com/ytc/AIdro_mPAHHBMO5KR3C0CDNqz9UFm_lDj03E3l0d3ERFGnXVWA=s900-c-k-c0x00ffffff-no-rj"
+          src="/photo.png"
           alt="Roosevelt Mogo"
           fill
           style={{ objectFit: "cover", objectPosition: "center top", filter: "grayscale(10%)" }}
