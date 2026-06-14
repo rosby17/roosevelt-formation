@@ -186,6 +186,33 @@ export default function Hero() {
             </span>
           </a>
         </div>
+
+        {/* Video Section */}
+        <div
+          style={{
+            marginTop: 64,
+            width: "100%",
+            maxWidth: 800,
+            margin: "64px auto 0",
+            aspectRatio: "16/9",
+            borderRadius: 16,
+            overflow: "hidden",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+            border: "1px solid var(--black-line)",
+            animation: "fadeUp 0.65s ease both 0.4s",
+          }}
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/3VnxBDg3374?si=1bT0a9q0RzX0oR_h"
+            title="Présentation Roosevelt Mogo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </header>
   );
