@@ -18,9 +18,9 @@ const SERVICES = [
   {
     id: "adsense-link",
     title: "Association de compte AdSense YouTube éligible",
-    desc: "Tu résides dans un pays non éligible ? Nous t'aidons à associer ton compte YouTube à un compte Google AdSense valide et vérifié dans un pays éligible pour percevoir tes revenus sans blocage.",
+    desc: "Tu résides dans un pays non éligible ? Nous t'aidons à associer ton compte YouTube à un compte Google AdSense valide et vérifié dans un pays éligible pour percevoir tes revenus sans blocage. Pourcentage négocié lors du premier contact.",
     badge: "Monétisation",
-    price: "15% de commission",
+    price: "20% à 40% de commission",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -32,9 +32,9 @@ const SERVICES = [
   {
     id: "facebook-payout",
     title: "Configuration de compte de règlement Facebook",
-    desc: "Reçois tes gains de pages Facebook monétisées (étoiles, pubs in-stream) en associant un compte de paiement européen / international valide.",
+    desc: "Reçois tes gains de pages Facebook monétisées (étoiles, pubs in-stream) en associant un compte de paiement européen / international valide. Pourcentage négocié lors du premier contact.",
     badge: "Facebook",
-    price: "15% de commission",
+    price: "20% à 40% de commission",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />

@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const links = [
     { href: "#programme", label: "Programme" },
-    { href: "#services", label: "Services" },
+    { href: "/services", label: "Services" },
     { href: "#offres", label: "Offres" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
@@ -85,8 +85,8 @@ export default function Navbar() {
         >
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
+              <Link
+                href={l.href.startsWith("#") ? `/${l.href}` : l.href}
                 style={{
                   fontSize: 14,
                   fontWeight: 500,
@@ -98,7 +98,7 @@ export default function Navbar() {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--white-muted)")}
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
@@ -169,9 +169,9 @@ export default function Navbar() {
           }}
         >
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              href={l.href.startsWith("#") ? `/${l.href}` : l.href}
               onClick={() => setOpen(false)}
               style={{
                 fontSize: 15,
@@ -181,7 +181,7 @@ export default function Navbar() {
               }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href={SITE.offers.replay.url}
