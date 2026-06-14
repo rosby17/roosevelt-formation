@@ -18,7 +18,7 @@ export const SERVICES: Service[] = [
     badge: "Indispensable",
     price: "2 500 FCFA",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/validation-de-numero-de-telephone-de-chaine/checkout",
-    image: "/validation.png",
+    image: "/services/validation.png",
     iconPath: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
   },
   {
@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     price: "20% à 40% de commission",
     checkoutUrl: "https://wa.me/237655306425",
     contactOnly: true,
-    image: "/adsense.png",
+    image: "/services/adsense.png",
     iconPath: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M12 4v16 M2 12h20",
   },
   {
@@ -40,7 +40,7 @@ export const SERVICES: Service[] = [
     price: "20% à 40% de commission",
     checkoutUrl: "https://wa.me/237655306425",
     contactOnly: true,
-    image: "/facebook.png",
+    image: "/services/facebook.png",
     iconPath: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
   },
   {
@@ -50,7 +50,7 @@ export const SERVICES: Service[] = [
     badge: "Montage Vidéo",
     price: "À partir de 3 000 FCFA/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5-7",
-    image: "/capcut.png",
+    image: "/services/capcut.png",
     iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
   {
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
     badge: "IA & Avatar",
     price: "À partir de 3 000 FCFA/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5-7",
-    image: "/heygen.png",
+    image: "/services/heygen.png",
     iconPath: "M12 2a10 10 0 1 0 10 10H12V2z M12 2a10 10 0 0 1 10 10",
   },
   {
@@ -70,7 +70,7 @@ export const SERVICES: Service[] = [
     badge: "Boutique",
     price: "À négocier",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/creation-de-boutique-en-ligne-chariow-maketou/checkout",
-    image: "/roosevelt.jpg",
+    image: "/services/chariow-maketou.png",
     iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
   },
 ];
