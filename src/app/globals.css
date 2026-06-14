@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -54,6 +54,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
+  font-style: normal;
   background-color: var(--black);
   background-image: var(--bg-image);
   background-size: var(--bg-size);
