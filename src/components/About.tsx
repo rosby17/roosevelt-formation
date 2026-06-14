@@ -9,10 +9,10 @@ const facts = [
 ];
 
 const metrics = [
-  { num: "10+", label: "Chaînes créées" },
-  { num: "15–30", label: "Vidéos / mois" },
-  { num: "1 000", label: "Abonnés objectif" },
-  { num: "4 000h", label: "Watch time requis" },
+  { num: "78+", label: "Chaînes créées" },
+  { num: "150–300", label: "Vidéos / mois" },
+  { num: "100K", label: "Trophée des 100k abonnés", icon: "🏆" },
+  { num: "25 000€+", label: "Généré grâce à YouTube" },
 ];
 
 export default function About() {
@@ -101,8 +101,9 @@ export default function About() {
             </h2>
 
             <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginTop: 4 }}>
-              J&apos;ai construit plusieurs chaînes YouTube dans différentes niches pour des audiences
-              francophones et anglophones.
+              J&apos;ai construit plusieurs chaînes YouTube dans différentes niches,
+              généré plus de 25 000€ de revenus et décroché le Trophée YouTube des 100 000 abonnés.
+              Tout ce que j&apos;enseigne, je l&apos;ai vécu.
             </p>
 
             {/* Facts list */}
@@ -142,10 +143,13 @@ export default function About() {
                     textAlign: "center",
                   }}
                 >
+                  {m.icon && (
+                    <div style={{ fontSize: 20, marginBottom: 2, lineHeight: 1 }}>{m.icon}</div>
+                  )}
                   <div
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: 34,
+                      fontSize: m.num.length > 6 ? 26 : 34,
                       fontWeight: 900,
                       color: "var(--red)",
                       lineHeight: 1,
