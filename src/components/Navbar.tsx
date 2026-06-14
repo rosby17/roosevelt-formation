@@ -30,7 +30,7 @@ export default function Navbar() {
         top: 0, left: 0, right: 0,
         zIndex: 200,
         padding: scrolled ? "14px 0" : "20px 0",
-        background: "rgba(13,13,13,0.88)",
+        background: "var(--nav-bg)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         borderBottom: "1px solid var(--black-line)",
@@ -160,7 +160,7 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            background: "rgba(13,13,13,0.98)",
+            background: "var(--nav-bg-mobile)",
             borderBottom: "1px solid var(--black-line)",
             padding: "20px 28px",
             display: "flex",

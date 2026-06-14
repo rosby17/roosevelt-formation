@@ -5,7 +5,7 @@ export default function Programme() {
   return (
     <section
       id="programme"
-      style={{ padding: "120px 0", background: "var(--black)" }}
+      style={{ padding: "120px 0", background: "transparent" }}
     >
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px" }}>
 

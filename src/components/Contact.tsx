@@ -54,7 +54,7 @@ export default function Contact() {
         id="contact"
         style={{
           padding: "120px 0",
-          background: "var(--black)",
+          background: "transparent",
           borderTop: "1px solid var(--black-line)",
         }}
       >

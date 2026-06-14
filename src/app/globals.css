@@ -14,17 +14,35 @@
   --white-dim: #635F5A;
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
+  --nav-bg: rgba(13, 13, 13, 0.82);
+  --nav-bg-mobile: rgba(13, 13, 13, 0.96);
+  --bg-image: 
+    radial-gradient(circle at 50% -20%, rgba(200, 16, 46, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(200, 16, 46, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 100% 60%, rgba(200, 16, 46, 0.02) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  --bg-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --black: #FAFAFA;
+    --black: #F5F5F7;
     --black-card: #FFFFFF;
-    --black-mid: #F5F5F5;
-    --black-line: #EAEAEA;
-    --white: #0D0D0D;
-    --white-muted: #635F5A;
-    --white-dim: #A09C96;
+    --black-mid: #EAEAEA;
+    --black-line: #E2E2E7;
+    --white: #1C1C1E;
+    --white-muted: #636366;
+    --white-dim: #8E8E93;
+    --nav-bg: rgba(245, 245, 247, 0.82);
+    --nav-bg-mobile: rgba(245, 245, 247, 0.96);
+    --bg-image: 
+      radial-gradient(circle at 50% -20%, rgba(200, 16, 46, 0.05) 0%, transparent 65%),
+      radial-gradient(circle at 0% 100%, rgba(200, 16, 46, 0.015) 0%, transparent 40%),
+      radial-gradient(circle at 100% 60%, rgba(200, 16, 46, 0.01) 0%, transparent 50%),
+      linear-gradient(rgba(0, 0, 0, 0.012) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.012) 1px, transparent 1px);
+    --bg-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   }
 }
 
@@ -32,7 +50,9 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  background: var(--black);
+  background-color: var(--black);
+  background-image: var(--bg-image);
+  background-size: var(--bg-size);
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
