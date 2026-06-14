@@ -1,5 +1,6 @@
 "use client";
 import { SITE } from "@/lib/data";
+import Image from "next/image";
 
 const getEmbedUrl = (url: string) => {
   if (!url) return "";
@@ -233,13 +234,29 @@ export default function Hero() {
               style={{ position: "absolute", top: 0, left: 0 }}
             ></iframe>
           ) : (
-            <div style={{ textAlign: "center", color: "var(--white-dim)", padding: 32 }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ margin: "0 auto 16px", opacity: 0.5 }}>
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-              </svg>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: "var(--white-muted)", marginBottom: 8 }}>Zone réservée pour la vidéo</h3>
-              <p style={{ fontSize: 14 }}>Ajoute l&apos;URL de ta vidéo dans <code>src/lib/data.ts</code> (champ <code>heroVideo</code>)</p>
+            <div style={{ width: "100%", height: "100%", position: "relative" }}>
+              <Image 
+                src="/roosevelt.jpg" 
+                alt="Présentation" 
+                fill 
+                style={{ objectFit: "cover", opacity: 0.4 }} 
+              />
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ 
+                  width: 80, 
+                  height: 80, 
+                  background: "var(--red)", 
+                  borderRadius: "50%", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center", 
+                  boxShadow: "0 8px 32px rgba(200,16,46,0.4)" 
+                }}>
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--white)" style={{ marginLeft: 6 }}>
+                    <path d="M5 3l14 9-14 9V3z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           )}
         </div>
