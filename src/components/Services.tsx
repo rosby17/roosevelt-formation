@@ -8,7 +8,7 @@ const SERVICES = [
     title: "Validation de numéro de téléphone de chaîne",
     desc: "Déverrouille les fonctionnalités avancées de YouTube (miniatures personnalisées, vidéos de plus de 15 minutes, diffusions en direct) en faisant valider ton numéro via un compte sécurisé et propre.",
     badge: "Indispensable",
-    price: "5 000 FCFA",
+    price: "2 500 FCFA",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -56,20 +56,6 @@ const SERVICES = [
       </svg>
     ),
   },
-  {
-    id: "online-store",
-    title: "Création de boutique en ligne (Chariow / Maketou)",
-    desc: "Vends tes produits digitaux, formations ou services facilement. Nous configurons entièrement ta boutique en ligne sur Chariow ou Maketou pour te permettre de recevoir des paiements par Mobile Money.",
-    badge: "Boutique",
-    price: "À négocier",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-      </svg>
-    ),
-  },
 ];
 
 export default function Services() {
@@ -89,7 +75,7 @@ export default function Services() {
       }}
     >
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px" }}>
-        
+
         {/* Header */}
         <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 64px" }}>
           <div style={{

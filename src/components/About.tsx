@@ -2,17 +2,17 @@
 import Image from "next/image";
 
 const facts = [
-  "Créateur YouTube multi-niches — football, psychologie, santé, spiritualité",
-  "Spécialiste HeyGen, avatars IA et production vidéo sans visage",
+  "Créateur YouTube multi-niches — football, psychologie, santé, spiritualité, Developpement personnel, Amour & Relation...",
+  "Spécialiste chaine Faceless",
   "Stratégies testées sur audiences francophones et anglophones",
   "Entrepreneur dans l'économie digitale depuis plusieurs années",
 ];
 
 const metrics = [
   { num: "78+", label: "Chaînes créées" },
-  { num: "150–300", label: "Vidéos / mois" },
+  { num: "3 ans+", label: "Expérience Faceless" },
   { num: "100K", label: "Trophée des 100k abonnés", icon: "🏆" },
-  { num: "25 000€+", label: "Généré grâce à YouTube" },
+  { num: "45 000€+", label: "Généré grâce à YouTube" },
 ];
 
 export default function About() {
@@ -101,8 +101,9 @@ export default function About() {
             </h2>
 
             <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginTop: 4 }}>
+              Je m&apos;appelle Roosevelt Mogo, créateur de contenu sur YouTube faceless depuis plus de 3 ans aujourd&apos;hui.
               J&apos;ai construit plusieurs chaînes YouTube dans différentes niches,
-              généré plus de 25 000€ de revenus et décroché le Trophée YouTube des 100 000 abonnés.
+              généré plus de 45 000€ de revenus et décroché le Trophée YouTube des 100 000 abonnés.
               Tout ce que j&apos;enseigne, je l&apos;ai vécu.
             </p>
 
