@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: "youtube-audit",
     title: "Audits de chaîne Youtube",
-    desc: "Analyse complète de ta chaîne YouTube pour identifier les blocages, auditer ton SEO, tes miniatures et ta rétention, afin d'optimiser tes vues et ta croissance.",
+    desc: "Analyse complète de ta chaîne YouTube pour identifier les blocages, conseils, astuces afin d'optimiser tes vues et ta croissance.",
     badge: "Audit",
     price: "5 000 FCFA",
     basePrice: 5000,
