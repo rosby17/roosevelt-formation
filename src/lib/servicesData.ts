@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
     badge: "Audit",
     price: "5 000 FCFA",
     basePrice: 5000,
-    checkoutUrl: "https://wa.me/237655306425", // Par défaut, vers WhatsApp
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout", // Par défaut, vers WhatsApp
     image: "/services/audit.png", // Image par défaut à changer plus tard si besoin
     iconPath: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", // Search/Audit icon
   },
