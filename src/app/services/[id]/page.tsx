@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import { SERVICES } from "@/lib/servicesData";
+import { useCurrency } from "@/lib/currency";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -14,6 +15,7 @@ interface PageProps {
 export default function ServiceDetailPage({ params }: PageProps) {
   const resolvedParams = use(params);
   const service = SERVICES.find((s) => s.id === resolvedParams.id);
+  const { formatPrice } = useCurrency();
 
   if (!service) {
     return (
@@ -135,7 +137,9 @@ export default function ServiceDetailPage({ params }: PageProps) {
                   alignItems: "baseline"
                 }}>
                   <span style={{ fontSize: 14, color: "var(--white-dim)" }}>Tarif</span>
-                  <span style={{ fontSize: 26, fontWeight: 900, color: "var(--red)" }}>{service.price}</span>
+                  <span style={{ fontSize: 26, fontWeight: 900, color: "var(--red)" }}>
+                    {service.basePrice ? formatPrice(service.basePrice, service.priceSuffix) : service.price}
+                  </span>
                 </div>
 
                 {service.contactOnly ? (
@@ -309,7 +313,9 @@ export default function ServiceDetailPage({ params }: PageProps) {
                     <div style={{ padding: "0 18px 16px" }}>
                       <div style={{ borderTop: "1px solid var(--black-line)", paddingTop: 12, display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                         <span style={{ fontSize: 11, color: "var(--white-dim)" }}>Tarif</span>
-                        <span style={{ fontSize: 14, fontWeight: 800, color: "var(--white)" }}>{other.price}</span>
+                        <span style={{ fontSize: 14, fontWeight: 800, color: "var(--white)" }}>
+                          {other.basePrice ? formatPrice(other.basePrice, other.priceSuffix) : other.price}
+                        </span>
                       </div>
                     </div>
                   </Link>
