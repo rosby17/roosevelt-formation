@@ -15,7 +15,7 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     id: "youtube-audit",
-    title: "Audits de chaîne Youtube",
+    title: "Audits de ta chaîne Youtube",
     desc: "Analyse complète de ta chaîne YouTube pour identifier les blocages, conseils, astuces afin d'optimiser tes vues et ta croissance.",
     badge: "Audit",
     price: "5 000 FCFA",

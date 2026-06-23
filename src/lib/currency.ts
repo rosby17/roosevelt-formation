@@ -2,33 +2,35 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-export type Currency = "XAF" | "EUR" | "USD";
+export type Currency = "XAF" | "XOF" | "EUR" | "USD";
 
 // Taux de conversion fixes par rapport au FCFA
 const EXCHANGE_RATES = {
   XAF: 1,
+  XOF: 1, // XOF a la même valeur que XAF
   EUR: 655.957,
-  USD: 600, // Taux approximatif ou fixe proposé
+  USD: 600,
 };
 
 const SYMBOLS = {
   XAF: "FCFA",
+  XOF: "CFA (XOF)", // Pour bien différencier visuellement si besoin, ou juste FCFA
   EUR: "€",
   USD: "$",
 };
 
-// Liste basique de codes pays ISO pour la zone Euro / Europe
 const EURO_COUNTRIES = [
   "AT", "BE", "CY", "EE", "FI", "FR", "DE", "GR", "IE", "IT", "LV", "LT", "LU", 
   "MT", "NL", "PT", "SK", "SI", "ES", "HR", "AD", "MC", "SM", "VA", "ME", "XK", 
-  "CH", "GB" // On met UK et CH en Euro par simplicité vu les choix demandés
+  "CH", "GB" 
 ];
 
-// Liste basique de codes pays ISO pour la zone XAF / XOF (Afrique francophone & autre)
-const XAF_COUNTRIES = [
-  "CM", "CF", "CG", "TD", "GQ", "GA", // CEMAC
-  "BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG", // UEMOA
-  "CD", "MG", "KM", "GN", "BI", "RW" // Autres pays d'Afrique souvent gérés en FCFA
+const CEMAC_COUNTRIES = [
+  "CM", "CF", "CG", "TD", "GQ", "GA", "CD", "MG", "KM", "GN", "BI", "RW"
+];
+
+const UEMOA_COUNTRIES = [
+  "BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG"
 ];
 
 export function useCurrency() {
@@ -41,18 +43,21 @@ export function useCurrency() {
         const res = await fetch("https://get.geojs.io/v1/ip/country.json");
         const data = await res.json();
         const countryCode = data.country; // ex: "FR"
+        
+        console.log("Pays détecté par IP :", countryCode); // Debug pour voir la détection
 
         if (EURO_COUNTRIES.includes(countryCode)) {
           setCurrency("EUR");
-        } else if (XAF_COUNTRIES.includes(countryCode)) {
+        } else if (UEMOA_COUNTRIES.includes(countryCode)) {
+          setCurrency("XOF");
+        } else if (CEMAC_COUNTRIES.includes(countryCode)) {
           setCurrency("XAF");
         } else {
-          // Reste du monde en USD (US, CA, Asie, etc.)
+          // Reste du monde
           setCurrency("USD");
         }
       } catch (error) {
         console.error("Erreur lors de la détection du pays :", error);
-        // Fallback par défaut
         setCurrency("XAF");
       } finally {
         setIsLoaded(true);
