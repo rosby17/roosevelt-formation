@@ -76,7 +76,8 @@ export function useCurrency() {
     let converted = basePriceFCFA / rate;
 
     if (currency === "EUR" || currency === "USD") {
-      converted = Math.round(converted * 10) / 10;
+      // Majoration commerciale vers ,99
+      converted = Math.floor(converted) + 0.99;
     }
 
     const formattedNumber = new Intl.NumberFormat("fr-FR", {
