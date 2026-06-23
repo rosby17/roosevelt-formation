@@ -1,5 +1,6 @@
 "use client";
 import { SITE } from "@/lib/data";
+import { useCurrency } from "@/lib/currency";
 
 const socials = [
   {
@@ -44,6 +45,8 @@ const socials = [
 ];
 
 export default function Contact() {
+  const { formatPrice } = useCurrency();
+
   const waMsg = encodeURIComponent(
     "Bonjour Roosevelt, je suis intéressé par ton accompagnement YouTube."
   );
@@ -220,11 +223,11 @@ export default function Contact() {
                   <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.9 }}>
                     <span>Session Live</span>
                     <span style={{ background: "rgba(0,0,0,0.3)", padding: "1px 5px", borderRadius: 4, textDecoration: "line-through", fontSize: 9 }}>
-                      {SITE.offers.live.originalPrice} {SITE.offers.live.currency}
+                      {SITE.offers.live.originalBasePrice ? formatPrice(SITE.offers.live.originalBasePrice) : `${SITE.offers.live.originalPrice} ${SITE.offers.live.currency}`}
                     </span>
                   </div>
                   <div style={{ fontSize: 16, fontWeight: 800, marginTop: 1 }}>
-                    {SITE.offers.live.price} {SITE.offers.live.currency}
+                    {SITE.offers.live.basePrice ? formatPrice(SITE.offers.live.basePrice) : `${SITE.offers.live.price} ${SITE.offers.live.currency}`}
                   </div>
                 </div>
               </a>
@@ -270,11 +273,11 @@ export default function Contact() {
                   <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.7 }}>
                     <span>Replay enregistré</span>
                     <span style={{ opacity: 0.6, textDecoration: "line-through", fontSize: 9 }}>
-                      {SITE.offers.replay.originalPrice} {SITE.offers.replay.currency}
+                      {SITE.offers.replay.originalBasePrice ? formatPrice(SITE.offers.replay.originalBasePrice) : `${SITE.offers.replay.originalPrice} ${SITE.offers.replay.currency}`}
                     </span>
                   </div>
                   <div style={{ fontSize: 16, fontWeight: 800, marginTop: 1 }}>
-                    {SITE.offers.replay.price} {SITE.offers.replay.currency}
+                    {SITE.offers.replay.basePrice ? formatPrice(SITE.offers.replay.basePrice) : `${SITE.offers.replay.price} ${SITE.offers.replay.currency}`}
                   </div>
                 </div>
               </a>

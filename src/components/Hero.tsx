@@ -1,6 +1,7 @@
 "use client";
 import { SITE } from "@/lib/data";
 import Image from "next/image";
+import { useCurrency } from "@/lib/currency";
 
 const getEmbedUrl = (url: string) => {
   if (!url) return "";
@@ -16,6 +17,8 @@ const getEmbedUrl = (url: string) => {
 };
 
 export default function Hero() {
+  const { formatPrice } = useCurrency();
+
   return (
     <header
       style={{
@@ -156,9 +159,9 @@ export default function Hero() {
             </svg>
             <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
               <span style={{ fontSize: 11, opacity: 0.7, textDecoration: "line-through", lineHeight: 1 }}>
-                {SITE.offers.live.currency} {SITE.offers.live.originalPrice}
+                {SITE.offers.live.originalBasePrice ? formatPrice(SITE.offers.live.originalBasePrice) : `${SITE.offers.live.currency} ${SITE.offers.live.originalPrice}`}
               </span>
-              <span>Session Live &mdash; {SITE.offers.live.currency} {SITE.offers.live.price}</span>
+              <span>Session Live &mdash; {SITE.offers.live.basePrice ? formatPrice(SITE.offers.live.basePrice) : `${SITE.offers.live.currency} ${SITE.offers.live.price}`}</span>
             </span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
@@ -194,9 +197,9 @@ export default function Hero() {
           >
             <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 1 }}>
               <span style={{ fontSize: 11, opacity: 0.55, textDecoration: "line-through", lineHeight: 1 }}>
-                {SITE.offers.replay.currency} {SITE.offers.replay.originalPrice}
+                {SITE.offers.replay.originalBasePrice ? formatPrice(SITE.offers.replay.originalBasePrice) : `${SITE.offers.replay.currency} ${SITE.offers.replay.originalPrice}`}
               </span>
-              <span>Replay &mdash; {SITE.offers.replay.currency} {SITE.offers.replay.price}</span>
+              <span>Replay &mdash; {SITE.offers.replay.basePrice ? formatPrice(SITE.offers.replay.basePrice) : `${SITE.offers.replay.currency} ${SITE.offers.replay.price}`}</span>
             </span>
           </a>
         </div>
