@@ -3,8 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SERVICES } from "@/lib/servicesData";
+import { useCurrency } from "@/lib/currency";
 
 export default function Services() {
+  const { formatPrice } = useCurrency();
   return (
     <section
       id="services"
@@ -166,7 +168,9 @@ export default function Services() {
                   alignItems: "baseline"
                 }}>
                   <span style={{ fontSize: 12, color: "var(--white-dim)" }}>Tarif</span>
-                  <span style={{ fontSize: 15, fontWeight: 800, color: "var(--white)" }}>{service.price}</span>
+                  <span style={{ fontSize: 15, fontWeight: 800, color: "var(--white)" }}>
+                    {service.basePrice ? formatPrice(service.basePrice, service.priceSuffix) : service.price}
+                  </span>
                 </div>
               </div>
             </Link>

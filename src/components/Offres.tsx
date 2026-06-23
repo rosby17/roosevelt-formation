@@ -1,5 +1,6 @@
 "use client";
 import { SITE, REPLAY_FEATURES, LIVE_FEATURES } from "@/lib/data";
+import { useCurrency } from "@/lib/currency";
 
 export default function Offres() {
   return (
@@ -48,7 +49,9 @@ export default function Offres() {
           <OfferCard
             tag="Accès autonome · Replay"
             originalPrice={SITE.offers.replay.originalPrice}
+            originalBasePrice={SITE.offers.replay.originalBasePrice}
             price={SITE.offers.replay.price}
+            basePrice={SITE.offers.replay.basePrice}
             currency={SITE.offers.replay.currency}
             subtitle={SITE.offers.replay.subtitle}
             features={REPLAY_FEATURES}
@@ -61,7 +64,9 @@ export default function Offres() {
           <OfferCard
             tag="Accompagnement · Live Google Meet"
             originalPrice={SITE.offers.live.originalPrice}
+            originalBasePrice={SITE.offers.live.originalBasePrice}
             price={SITE.offers.live.price}
+            basePrice={SITE.offers.live.basePrice}
             currency={SITE.offers.live.currency}
             subtitle={SITE.offers.live.subtitle}
             features={LIVE_FEATURES}
@@ -105,11 +110,13 @@ export default function Offres() {
 }
 
 function OfferCard({
-  tag, originalPrice, price, currency, subtitle, features, href, cta, featured,
+  tag, originalPrice, originalBasePrice, price, basePrice, currency, subtitle, features, href, cta, featured,
 }: {
   tag: string;
   originalPrice?: string;
+  originalBasePrice?: number;
   price: string;
+  basePrice?: number;
   currency: string;
   subtitle: string;
   features: { ok: boolean; text: string }[];
@@ -117,6 +124,7 @@ function OfferCard({
   cta: string;
   featured: boolean;
 }) {
+  const { formatPriceParts, formatPrice } = useCurrency();
   const bg = featured ? "var(--red)" : "var(--black)";
   const border = featured ? "var(--red)" : "var(--black-line)";
   const featureColor = featured ? "rgba(255,255,255,0.85)" : "var(--white-muted)";
@@ -165,7 +173,7 @@ function OfferCard({
       {/* Price */}
       <div style={{ marginBottom: 8 }}>
         {/* Prix barré (ancrage) */}
-        {originalPrice && (
+        {(originalPrice || originalBasePrice) && (
           <div style={{
             display: "flex", alignItems: "center", gap: 8, marginBottom: 6,
           }}>
@@ -177,7 +185,7 @@ function OfferCard({
               textDecoration: "line-through",
               letterSpacing: "-0.01em",
             }}>
-              {currency} {originalPrice}
+              {originalBasePrice ? formatPrice(originalBasePrice) : `${currency} ${originalPrice}`}
             </span>
             <span style={{
               fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
@@ -200,10 +208,10 @@ function OfferCard({
             marginTop: 8,
             display: "inline-block",
           }}>
-            {currency}{" "}
+            {basePrice ? formatPriceParts(basePrice).symbol : currency}{" "}
           </span>
           <span style={{ fontSize: 56, letterSpacing: "-0.03em", color: featured ? "#fff" : "var(--white)" }}>
-            {price}
+            {basePrice ? formatPriceParts(basePrice).value : price}
           </span>
         </div>
       </div>
