@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
     badge: "Audit",
     price: "5 000 FCFA",
     basePrice: 5000,
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout", // Par défaut, vers WhatsApp
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout", // Par défaut, vers WhatsApp
     image: "/services/audit.png", // Image par défaut à changer plus tard si besoin
     iconPath: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", // Search/Audit icon
   },
@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
     badge: "Indispensable",
     price: "2 500 FCFA",
     basePrice: 2500,
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout",
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout",
     image: "/services/validation.png",
     iconPath: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
   },
@@ -65,7 +65,7 @@ export const SERVICES: Service[] = [
     price: "4 000 FCFA/mois",
     basePrice: 4000,
     priceSuffix: "/mois",
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-0/checkout",
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-0/checkout",
     image: "/services/capcut.png",
     iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
     price: "15 000 FCFA/mois",
     basePrice: 15000,
     priceSuffix: "/mois",
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-7-5-7/checkout",
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-5-7/checkout",
     image: "/services/heygen.png",
     iconPath: "M12 2a10 10 0 1 0 10 10H12V2z M12 2a10 10 0 0 1 10 10",
   },
@@ -88,7 +88,7 @@ export const SERVICES: Service[] = [
     badge: "Boutique",
     price: "15 000 FCFA",
     basePrice: 15000,
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-3/checkout",
+    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-3/checkout",
     image: "/services/chariow-maketou.png",
     iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
   },

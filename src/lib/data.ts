@@ -20,7 +20,7 @@ export const SITE = {
       basePrice: 9950,
       currency: "FCFA",
       subtitle: "Sessions enregistrées avec d'autres apprenants",
-      url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5/checkout",
+      url: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5/checkout",
     },
     live: {
       label: "Live Google Meet",
@@ -30,7 +30,7 @@ export const SITE = {
       basePrice: 49550,
       currency: "FCFA",
       subtitle: "Session interactive en direct avec Roosevelt",
-      url: "https://roosevelt-mogo.mymaketou.store/products/service-et-collaboration-avec-roosevelt-5-6/checkout",
+      url: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-6/checkout",
     },
   },
 };
