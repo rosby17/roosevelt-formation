@@ -12,11 +12,13 @@ export const metadata: Metadata = {
     description: SITE.description,
     type: "website",
     url: SITE.url,
+    images: [{ url: `${SITE.url}/photo.png`, width: 1024, height: 1024, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
+    images: [`${SITE.url}/photo.png`],
   },
   robots: { index: true, follow: true },
 };
