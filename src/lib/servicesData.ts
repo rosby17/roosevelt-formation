@@ -111,8 +111,8 @@ export const SERVICES: Service[] = [
   },
   {
     id: "chatgpt-pro-etudiant",
-    title: "Accès à ChatGPT Pro pour étudiants (offre gratuite)",
-    desc: "Si tu es éligible en tant qu'étudiant, ChatGPT Work est offert plusieurs mois via l'offre étudiante officielle. Je t'accompagne pour créer et configurer ton compte correctement afin d'en profiter.",
+    title: "Accès à ChatGPT Pro pendant 4 mois pour étudiants",
+    desc: "En tant qu'étudiant, ChatGPT est offert plusieurs mois via l'offre étudiante officielle. Je t'accompagne pour créer et configurer ton compte correctement afin d'en profiter.",
     badge: "Offre limitée",
     price: "3 300 FCFA",
     basePrice: 3300,
