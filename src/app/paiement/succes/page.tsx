@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { SITE } from "@/lib/data";
 import { PAYMENT_OFFERS, isOfferKey } from "@/lib/payment/offers";
 
-export default function PaiementSuccesPage() {
+function PaiementSuccesContent() {
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<"checking" | "completed" | "pending" | "error">("checking");
 
@@ -112,5 +112,13 @@ export default function PaiementSuccesPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function PaiementSuccesPage() {
+  return (
+    <Suspense fallback={null}>
+      <PaiementSuccesContent />
+    </Suspense>
   );
 }
