@@ -11,7 +11,7 @@ export const PAYMENT_OFFERS = {
   },
   "chatgpt-pro-etudiant": {
     label: "Accès à ChatGPT Pro pour étudiants",
-    priceFcfa: 5500,
+    priceFcfa: 3300,
     isLive: false,
     deliveryUrl: "https://www.youtube.com/watch?v=CsewzuG69fY",
   },

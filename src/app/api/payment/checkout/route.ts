@@ -66,15 +66,62 @@ export async function POST(request: Request) {
     }
 
     // Mobile Money via Maketou (par défaut).
+    let cleanPhone = typeof body.phone === "string" ? body.phone.trim().replace(/[\s\-\(\)]/g, "") : "";
+    if (cleanPhone) {
+      if (!cleanPhone.startsWith("+")) {
+        if (cleanPhone.startsWith("237")) {
+          cleanPhone = `+${cleanPhone}`;
+        } else if (/^[6][5-9]\d{7}$/.test(cleanPhone)) {
+          cleanPhone = `+237${cleanPhone}`;
+        } else {
+          cleanPhone = `+${cleanPhone}`;
+        }
+      }
+    }
+
     const redirectURL = `${cleanOrigin}/paiement/succes?offer=${offer}&provider=maketou`;
 
-    const { redirectUrl } = await createMaketouCheckout({
-      ...PLACEHOLDER_IDENTITY,
-      redirectURL,
-      priceFcfa,
-    });
+    try {
+      const { redirectUrl } = await createMaketouCheckout({
+        ...PLACEHOLDER_IDENTITY,
+        phone: cleanPhone || undefined,
+        redirectURL,
+        priceFcfa,
+      });
 
-    return NextResponse.json({ success: true, redirectUrl });
+      return NextResponse.json({ success: true, redirectUrl });
+    } catch (maketouError) {
+      console.warn("Échec Maketou Mobile Money, tentative de repli vers Tara Money:", maketouError);
+
+      try {
+        const orderId = crypto.randomUUID();
+        const webhookSecret = process.env.TARA_WEBHOOK_SECRET;
+        let returnUrl = `${cleanOrigin}/paiement/succes?offer=${offer}&provider=tara`;
+        if (returnUrl.startsWith("http://")) returnUrl = returnUrl.replace("http://", "https://");
+
+        let webHookUrl = webhookSecret
+          ? `${cleanOrigin}/api/payment/webhook/taramoney?key=${encodeURIComponent(webhookSecret)}&offer=${offer}`
+          : "";
+        if (webHookUrl.startsWith("http://")) webHookUrl = webHookUrl.replace("http://", "https://");
+
+        const { generalLink } = await createTaraPaymentLink({
+          orderId,
+          productName: `${offerData.label} - Roosevelt Mogo`,
+          priceFcfa,
+          description: `${offerData.label} — ${priceFcfa} FCFA`,
+          returnUrl,
+          webHookUrl,
+        });
+
+        if (generalLink) {
+          return NextResponse.json({ success: true, redirectUrl: generalLink });
+        }
+      } catch (taraError) {
+        console.error("Échec repli Tara Money:", taraError);
+      }
+
+      throw maketouError;
+    }
   } catch (error) {
     console.error("Erreur checkout:", error);
     const message = error instanceof Error ? error.message : "Service de paiement indisponible.";

@@ -29,17 +29,19 @@ type PaymentMethod = "mobile" | "card" | "paypal";
 
 function CheckoutModal({ offer, onClose }: { offer: OfferKey; onClose: () => void }) {
   const offerData = PAYMENT_OFFERS[offer];
+  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod | null>(null);
+  const [phone, setPhone] = useState("");
   const [loadingMethod, setLoadingMethod] = useState<PaymentMethod | null>(null);
   const [error, setError] = useState("");
 
-  async function handleSelect(method: PaymentMethod) {
+  async function handleSelect(method: PaymentMethod, phoneNumber?: string) {
     setError("");
     setLoadingMethod(method);
     try {
       const res = await fetch("/api/payment/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ offer, method }),
+        body: JSON.stringify({ offer, method, phone: phoneNumber }),
       });
       const data = await res.json();
       if (!data.success || !data.redirectUrl) {
@@ -103,26 +105,103 @@ function CheckoutModal({ offer, onClose }: { offer: OfferKey; onClose: () => voi
           {offerData.priceFcfa.toLocaleString("fr-FR")} FCFA — choisis ton moyen de paiement
         </p>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <PaymentButton
-            label="Mobile Money"
-            loading={loadingMethod === "mobile"}
-            disabled={loadingMethod !== null}
-            onClick={() => handleSelect("mobile")}
-          />
-          <PaymentButton
-            label="Carte bancaire"
-            loading={loadingMethod === "card"}
-            disabled={loadingMethod !== null}
-            onClick={() => handleSelect("card")}
-          />
-          <PaymentButton
-            label="PayPal"
-            loading={loadingMethod === "paypal"}
-            disabled={loadingMethod !== null}
-            onClick={() => handleSelect("paypal")}
-          />
-        </div>
+        {selectedMethod === "mobile" ? (
+          <div>
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedMethod(null);
+                setError("");
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--white-dim)",
+                fontSize: 13,
+                cursor: "pointer",
+                marginBottom: 16,
+                padding: 0,
+              }}
+            >
+              ← Autre moyen de paiement
+            </button>
+            <label
+              htmlFor="momo-phone"
+              style={{ display: "block", color: "var(--white)", fontSize: 14, fontWeight: 600, marginBottom: 6 }}
+            >
+              Numéro Mobile Money
+            </label>
+            <p style={{ color: "var(--white-muted)", fontSize: 12, marginBottom: 10 }}>
+              Orange Money, MTN MoMo, Wave (ex: +237 655 30 64 25)
+            </p>
+            <input
+              id="momo-phone"
+              type="tel"
+              placeholder="+237 6..."
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "12px 14px",
+                borderRadius: 8,
+                border: "1px solid var(--black-line)",
+                background: "var(--black)",
+                color: "var(--white)",
+                fontSize: 15,
+                marginBottom: 16,
+                outline: "none",
+                boxSizing: "border-box",
+              }}
+              autoFocus
+            />
+            <button
+              type="button"
+              disabled={loadingMethod !== null}
+              onClick={() => handleSelect("mobile", phone)}
+              style={{
+                width: "100%",
+                padding: "14px 20px",
+                borderRadius: 8,
+                background: "var(--red)",
+                color: "#fff",
+                fontSize: 15,
+                fontWeight: 700,
+                border: "none",
+                cursor: loadingMethod !== null ? "default" : "pointer",
+                opacity: loadingMethod !== null ? 0.7 : 1,
+                boxShadow: "0 6px 20px rgba(200,16,46,0.35)",
+              }}
+            >
+              {loadingMethod === "mobile"
+                ? "Redirection…"
+                : `Payer ${offerData.priceFcfa.toLocaleString("fr-FR")} FCFA`}
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <PaymentButton
+              label="Mobile Money"
+              loading={loadingMethod === "mobile"}
+              disabled={loadingMethod !== null}
+              onClick={() => {
+                setSelectedMethod("mobile");
+                setError("");
+              }}
+            />
+            <PaymentButton
+              label="Carte bancaire"
+              loading={loadingMethod === "card"}
+              disabled={loadingMethod !== null}
+              onClick={() => handleSelect("card")}
+            />
+            <PaymentButton
+              label="PayPal"
+              loading={loadingMethod === "paypal"}
+              disabled={loadingMethod !== null}
+              onClick={() => handleSelect("paypal")}
+            />
+          </div>
+        )}
 
         {error && <p style={{ color: "var(--red)", fontSize: 13, marginTop: 12 }}>{error}</p>}
       </div>
