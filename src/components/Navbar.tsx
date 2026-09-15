@@ -115,12 +115,12 @@ export default function Navbar() {
                 border: "none",
                 cursor: "pointer",
                 display: "inline-block",
-                transition: "background 0.2s",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "var(--red-dim)")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "var(--red)")}
             >
-              Commencer →
+              Discuter avec Roosevelt en Live
             </button>
           </li>
           <li>
@@ -200,7 +200,7 @@ export default function Navbar() {
               textAlign: "center",
             }}
           >
-            Commencer →
+            Discuter avec Roosevelt en Live
           </button>
           <ThemeToggle />
         </div>
