@@ -5,13 +5,13 @@ const facts = [
   "Créateur YouTube multi-niches — football, psychologie, santé, spiritualité, Developpement personnel, Amour & Relation...",
   "Spécialiste chaine Faceless",
   "Stratégies testées sur audiences francophones et anglophones",
-  "Entrepreneur dans l'économie digitale depuis plusieurs années",
+  "Fondateur de plusieurs SaaS (iziVoice, Kappgen) utilisés par des créateurs de contenu",
+  "Développeur Full-Stack & Designer — conception, architecture et paiements de bout en bout",
 ];
 
 const metrics = [
   { num: "78+", label: "Chaînes créées" },
   { num: "3 ans+", label: "Expérience Faceless" },
-  { num: "100K", label: "Trophée des 100k abonnés", icon: "🏆" },
   { num: "45 000€+", label: "Généré grâce à YouTube" },
 ];
 
@@ -38,12 +38,12 @@ export default function About() {
           className="about-grid"
         >
           {/* Photo */}
-          <div style={{ position: "relative", minHeight: 520, background: "var(--black-mid)" }}>
+          <div style={{ position: "relative", minHeight: 420, background: "var(--black-mid)" }} className="about-photo">
             <Image
               src="/photo.png"
               alt="Roosevelt Mogo"
               fill
-              style={{ objectFit: "cover", objectPosition: "center top", filter: "grayscale(15%)" }}
+              style={{ objectFit: "cover", objectPosition: "center 20%" }}
             />
             <div
               aria-hidden
@@ -100,11 +100,17 @@ export default function About() {
               <em style={{ fontStyle: "italic", color: "var(--red)" }}>Du vécu.</em>
             </h2>
 
-            <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, marginTop: 4 }}>
-              Je m&apos;appelle Roosevelt Mogo, créateur de contenu sur YouTube faceless depuis plus de 3 ans aujourd&apos;hui.
-              J&apos;ai construit plusieurs chaînes YouTube dans différentes niches,
-              généré plus de 45 000€ de revenus et décroché le Trophée YouTube des 100 000 abonnés.
-              Tout ce que j&apos;enseigne, je l&apos;ai vécu.
+            <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.9, marginTop: 4 }}>
+              Créateur YouTube faceless depuis 3 ans, aussi développeur full-stack et designer produit —
+              j&apos;ai conçu mes propres SaaS (iziVoice, Kappgen).{" "}
+              <a
+                href="https://roosevelt.izivoice.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--red)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}
+              >
+                Voir mon portfolio →
+              </a>
             </p>
 
             {/* Facts list */}
@@ -127,7 +133,7 @@ export default function About() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
+                gridTemplateColumns: "1fr 1fr 1fr",
                 gap: 1,
                 background: "var(--black-line)",
                 border: "1px solid var(--black-line)",
@@ -144,9 +150,6 @@ export default function About() {
                     textAlign: "center",
                   }}
                 >
-                  {m.icon && (
-                    <div style={{ fontSize: 20, marginBottom: 2, lineHeight: 1 }}>{m.icon}</div>
-                  )}
                   <div
                     style={{
                       fontFamily: "var(--font-display)",
@@ -166,13 +169,70 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* Trophée Silver Play Button — bien visible */}
+        <div
+          className="trophy-showcase"
+          style={{
+            marginTop: 24,
+            display: "grid",
+            gridTemplateColumns: "260px 1fr",
+            alignItems: "center",
+            gap: 40,
+            background: "linear-gradient(135deg, rgba(200,16,46,0.08) 0%, var(--black) 100%)",
+            border: "1px solid var(--black-line)",
+            borderRadius: 32,
+            padding: "40px 48px",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "3/4",
+              borderRadius: 16,
+              overflow: "hidden",
+              boxShadow: "0 16px 48px rgba(0,0,0,0.4)",
+              border: "1px solid var(--black-line)",
+              justifySelf: "center",
+            }}
+          >
+            <Image
+              src="/trophee.jpeg"
+              alt="Trophée YouTube Silver Play Button — 100 000 abonnés"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div>
+            <div style={{ fontSize: 40, marginBottom: 8, lineHeight: 1 }}>🏆</div>
+            <h3
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(24px, 3vw, 34px)",
+                fontWeight: 900,
+                color: "var(--white)",
+                marginBottom: 10,
+                lineHeight: 1.15,
+              }}
+            >
+              Silver Play Button — <span style={{ color: "var(--red)" }}>100 000 abonnés</span>
+            </h3>
+            <p style={{ fontSize: 15, color: "var(--white-muted)", lineHeight: 1.8, maxWidth: 480 }}>
+              Trophée officiel remis par YouTube à Mogo Kamdem Roosevelt pour avoir dépassé les 100 000 abonnés.
+              La preuve concrète que les stratégies que j&apos;enseigne fonctionnent vraiment.
+            </p>
+          </div>
+        </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
           .about-grid { grid-template-columns: 1fr !important; }
-          .about-grid > div:first-child { display: none; }
-          .about-grid > div:last-child { border-left: none !important; padding: 48px 28px !important; }
+          .about-grid > div:first-child { min-height: 320px !important; }
+          .about-grid > div:last-child { border-left: none !important; border-top: 1px solid var(--black-line); padding: 48px 28px !important; }
+          .trophy-showcase { grid-template-columns: 1fr !important; padding: 32px 28px !important; text-align: center; }
+          .trophy-showcase > div:first-child { max-width: 220px; margin: 0 auto; }
         }
       `}</style>
     </section>

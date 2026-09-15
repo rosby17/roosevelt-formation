@@ -35,9 +35,9 @@ export default function Services() {
             fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.08,
             color: "var(--white)", marginBottom: 16,
           }}>
-            Résous tes blocages.
+            Un écosystème pensé
             <br />
-            <em style={{ fontStyle: "italic", color: "var(--red)" }}>Propulse tes chaînes.</em>
+            <em style={{ fontStyle: "italic", color: "var(--red)" }}>pour ta croissance de créateur.</em>
           </h2>
           <p style={{ fontSize: 16, color: "var(--white-muted)", lineHeight: 1.75 }}>
             Clique sur un service pour voir ses détails complets, l&apos;acheter ou le partager.
@@ -54,7 +54,9 @@ export default function Services() {
           {SERVICES.map((service) => (
             <Link
               key={service.id}
-              href={`/services/${service.id}`}
+              href={service.outOfStock ? "#" : `/services/${service.id}`}
+              onClick={(e) => service.outOfStock && e.preventDefault()}
+              aria-disabled={service.outOfStock}
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -64,14 +66,19 @@ export default function Services() {
                 border: "1px solid var(--black-line)",
                 borderRadius: 16,
                 overflow: "hidden",
+                opacity: service.outOfStock ? 0.45 : 1,
+                filter: service.outOfStock ? "grayscale(1)" : undefined,
+                cursor: service.outOfStock ? "not-allowed" : "pointer",
                 transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
               onMouseEnter={(e) => {
+                if (service.outOfStock) return;
                 e.currentTarget.style.borderColor = "var(--white-dim)";
                 e.currentTarget.style.transform = "translateY(-4px)";
                 e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)";
               }}
               onMouseLeave={(e) => {
+                if (service.outOfStock) return;
                 e.currentTarget.style.borderColor = "var(--black-line)";
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
@@ -108,7 +115,7 @@ export default function Services() {
                   fontWeight: 700,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: "var(--red)",
+                  color: service.outOfStock ? "#666" : "var(--red)",
                   background: "rgba(255,255,255,0.92)",
                   border: "1px solid rgba(200,16,46,0.25)",
                   padding: "4px 10px",
@@ -116,7 +123,7 @@ export default function Services() {
                   backdropFilter: "blur(8px)",
                   WebkitBackdropFilter: "blur(8px)",
                 }}>
-                  {service.badge}
+                  {service.outOfStock ? "Épuisé" : service.badge}
                 </span>
               </div>
 

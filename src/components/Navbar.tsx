@@ -1,13 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { SITE } from "@/lib/data";
-
 import Image from "next/image";
+import { useCheckout } from "@/components/CheckoutModal";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { openCheckout } = useCheckout();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60);
@@ -62,11 +63,11 @@ export default function Navbar() {
           }}
         >
           <Image
-            src="/logo.png"
-            alt="Logo"
+            src="/photo.png"
+            alt="Roosevelt Mogo"
             width={42}
             height={42}
-            style={{ borderRadius: "50%", objectFit: "contain" }}
+            style={{ borderRadius: "50%", objectFit: "cover", border: "1px solid var(--black-line)" }}
           />
           <span>
             Roosevelt <span style={{ color: "var(--red)" }}>Mogo</span>
@@ -102,10 +103,8 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a
-              href={SITE.offers.live.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openCheckout("live")}
               style={{
                 background: "var(--red)",
                 color: "#fff",
@@ -113,7 +112,8 @@ export default function Navbar() {
                 borderRadius: 6,
                 fontSize: 14,
                 fontWeight: 600,
-                textDecoration: "none",
+                border: "none",
+                cursor: "pointer",
                 display: "inline-block",
                 transition: "background 0.2s",
               }}
@@ -121,7 +121,10 @@ export default function Navbar() {
               onMouseLeave={(e) => (e.currentTarget.style.background = "var(--red)")}
             >
               Commencer →
-            </a>
+            </button>
+          </li>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
 
@@ -183,10 +186,8 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={SITE.offers.live.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => { setOpen(false); openCheckout("live"); }}
             style={{
               background: "var(--red)",
               color: "#fff",
@@ -194,12 +195,14 @@ export default function Navbar() {
               borderRadius: 6,
               fontSize: 14,
               fontWeight: 600,
-              textDecoration: "none",
+              border: "none",
+              cursor: "pointer",
               textAlign: "center",
             }}
           >
             Commencer →
-          </a>
+          </button>
+          <ThemeToggle />
         </div>
       )}
 

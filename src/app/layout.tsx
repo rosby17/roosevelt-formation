@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SITE } from "@/lib/data";
+import { CheckoutProvider } from "@/components/CheckoutModal";
+import { ThemeInitScript } from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
@@ -22,7 +24,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <head>
+        <ThemeInitScript />
+      </head>
+      <body>
+        <CheckoutProvider>{children}</CheckoutProvider>
+      </body>
     </html>
   );
 }

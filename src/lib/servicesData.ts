@@ -1,3 +1,5 @@
+import { OfferKey } from "@/lib/payment/offers";
+
 export interface Service {
   id: string;
   title: string;
@@ -10,6 +12,8 @@ export interface Service {
   image: string;
   iconPath: string; // fallback SVG path if image is missing
   contactOnly?: boolean; // si true, affiche "Me contacter" au lieu du bouton checkout
+  outOfStock?: boolean; // si true, service grisé et non cliquable
+  paymentOffer?: OfferKey; // si présent, ouvre le checkout automatisé (Maketou/Tara) au lieu d'un simple lien
 }
 
 export const SERVICES: Service[] = [
@@ -31,7 +35,7 @@ export const SERVICES: Service[] = [
     badge: "Indispensable",
     price: "2 500 FCFA",
     basePrice: 2500,
-    checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-5/checkout",
+    checkoutUrl: "https://agedgmail.tools-cl.com/app/sms",
     image: "/services/validation.png",
     iconPath: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",
   },
@@ -67,6 +71,7 @@ export const SERVICES: Service[] = [
     priceSuffix: "/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-0/checkout",
     image: "/services/capcut.png",
+    outOfStock: true,
     iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
   {
@@ -79,6 +84,7 @@ export const SERVICES: Service[] = [
     priceSuffix: "/mois",
     checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-7-5-7/checkout",
     image: "/services/heygen.png",
+    outOfStock: true,
     iconPath: "M12 2a10 10 0 1 0 10 10H12V2z M12 2a10 10 0 0 1 10 10",
   },
   {
@@ -91,5 +97,50 @@ export const SERVICES: Service[] = [
     checkoutUrl: "https://roosevelt-mogo.mymaketou.shop/fr/products/service-et-collaboration-avec-roosevelt-5-3/checkout",
     image: "/services/chariow-maketou.png",
     iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
+  },
+  {
+    id: "vente-produits-digitaux",
+    title: "Formation gratuite : vendre des produits digitaux",
+    desc: "Tu veux te lancer dans la vente de produits digitaux (formations, ebooks, services) mais tu galères à générer du cash ? Cette formation gratuite t'explique la méthode étape par étape.",
+    badge: "Gratuit",
+    price: "Gratuit",
+    checkoutUrl: "https://www.youtube.com/watch?v=3VnxBDg3374&t=3s",
+    contactOnly: true,
+    image: "/services/vente-produits-digitaux.jpg",
+    iconPath: "M9 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M20 21a1 1 0 1 0 0 2 1 1 0 0 0 0-2z M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
+  },
+  {
+    id: "chatgpt-pro-etudiant",
+    title: "Accès à ChatGPT Pro pour étudiants (offre gratuite)",
+    desc: "Si tu es éligible en tant qu'étudiant, ChatGPT Work est offert plusieurs mois via l'offre étudiante officielle. Je t'accompagne pour créer et configurer ton compte correctement afin d'en profiter.",
+    badge: "Offre limitée",
+    price: "5 500 FCFA",
+    basePrice: 5500,
+    checkoutUrl: "https://wa.me/237655306425",
+    paymentOffer: "chatgpt-pro-etudiant",
+    image: "/services/chatgpt-students.png",
+    iconPath: "M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5",
+  },
+  {
+    id: "izivoice",
+    title: "Voix off IA pour tes vidéos (iziVoice)",
+    desc: "Besoin d'une voix off naturelle pour tes vidéos faceless sans montrer ton visage ni enregistrer ta propre voix ? Utilise iziVoice, notre plateforme de génération de voix off par IA.",
+    badge: "Voix Off IA",
+    price: "Voir tarifs sur le site",
+    checkoutUrl: "https://izivoice.app/",
+    contactOnly: true,
+    image: "/services/izivoice.png",
+    iconPath: "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z M19 10v2a7 7 0 0 1-14 0v-2 M12 19v4 M8 23h8",
+  },
+  {
+    id: "kappgen",
+    title: "Création et montage vidéo IA (Kappgen)",
+    desc: "Produis et monte tes vidéos faceless plus vite grâce à Kappgen, l'outil qu'on utilise aujourd'hui pour créer du contenu assisté par IA.",
+    badge: "Montage IA",
+    price: "Voir tarifs sur kappgen.com",
+    checkoutUrl: "https://kappgen.com/",
+    contactOnly: true,
+    image: "/services/kappgen.png",
+    iconPath: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z M4 6a2 2 0 00-2 2v8a2 2 0 002 2h11a2 2 0 002-2V8a2 2 0 00-2-2H4z",
   },
 ];

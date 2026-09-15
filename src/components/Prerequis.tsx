@@ -29,26 +29,27 @@ const tools = [
   {
     name: "Claude / ChatGPT",
     usage: "Rédaction de scripts, titres, descriptions",
-    price: "~20$/mois",
     required: false,
   },
   {
-    name: "HeyGen",
-    usage: "Création d'avatars IA et vidéos sans visage",
-    price: "~29$/mois",
+    name: "iziVoice",
+    usage: "Génération de voix off par IA, synthèse vocale",
+    required: false,
+  },
+  {
+    name: "Google Flow / ChatGPT",
+    usage: "Génération d'images pour tes vidéos",
+    required: false,
+  },
+  {
+    name: "Kappgen",
+    usage: "Montage vidéo assisté par IA (délègue toute la chaîne)",
     required: false,
   },
   {
     name: "CapCut",
-    usage: "Montage vidéo simple et rapide",
-    price: "Gratuit / ~10$/mois",
+    usage: "Montage vidéo manuel (optionnel)",
     required: false,
-  },
-  {
-    name: "YouTube Studio",
-    usage: "Gestion et analyse de ta chaîne",
-    price: "Gratuit",
-    required: true,
   },
 ];
 
@@ -136,7 +137,7 @@ export default function Prerequis() {
         }}>
           {/* Table header */}
           <div style={{
-            display: "grid", gridTemplateColumns: "1fr 2fr 1fr",
+            display: "grid", gridTemplateColumns: "1fr 2fr",
             padding: "16px 28px",
             borderBottom: "1px solid var(--black-line)",
             fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
@@ -144,14 +145,13 @@ export default function Prerequis() {
           }}>
             <span>Outil</span>
             <span>Usage</span>
-            <span style={{ textAlign: "right" }}>Coût estimé</span>
           </div>
 
           {tools.map((t, i) => (
             <div
               key={t.name}
               style={{
-                display: "grid", gridTemplateColumns: "1fr 2fr 1fr",
+                display: "grid", gridTemplateColumns: "1fr 2fr",
                 padding: "20px 28px",
                 borderBottom: i < tools.length - 1 ? "1px solid var(--black-line)" : undefined,
                 alignItems: "center",
@@ -166,12 +166,6 @@ export default function Prerequis() {
                 <span style={{ fontSize: 15, fontWeight: 600, color: "var(--white)" }}>{t.name}</span>
               </div>
               <span style={{ fontSize: 14, color: "var(--white-muted)" }}>{t.usage}</span>
-              <span style={{
-                fontSize: 13, fontWeight: 600, textAlign: "right",
-                color: t.required ? "#4ADE80" : "var(--white-dim)",
-              }}>
-                {t.price}
-              </span>
             </div>
           ))}
         </div>

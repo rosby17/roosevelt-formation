@@ -1,6 +1,7 @@
 "use client";
 import { SITE } from "@/lib/data";
 import { useCurrency } from "@/lib/currency";
+import { useCheckout } from "@/components/CheckoutModal";
 
 const socials = [
   {
@@ -46,6 +47,7 @@ const socials = [
 
 export default function Contact() {
   const { formatPrice } = useCurrency();
+  const { openCheckout } = useCheckout();
 
   const waMsg = encodeURIComponent(
     "Bonjour Roosevelt, je suis intéressé par ton accompagnement YouTube."
@@ -185,20 +187,19 @@ export default function Contact() {
               </p>
 
               {/* Premium Live CTA */}
-              <a
-                href={SITE.offers.live.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openCheckout("live")}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 16,
+                  width: "100%",
                   background: "linear-gradient(135deg, var(--red) 0%, #d80b2a 100%)",
                   color: "#fff",
                   padding: "16px 28px",
                   borderRadius: 14,
-                  textDecoration: "none",
+                  cursor: "pointer",
                   marginBottom: 12,
                   boxShadow: "0 8px 24px rgba(200, 16, 46, 0.35), inset 0 1px 0 rgba(255,255,255,0.2)",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -230,24 +231,23 @@ export default function Contact() {
                     {SITE.offers.live.basePrice ? formatPrice(SITE.offers.live.basePrice) : `${SITE.offers.live.price} ${SITE.offers.live.currency}`}
                   </div>
                 </div>
-              </a>
+              </button>
 
               {/* Premium Replay CTA */}
-              <a
-                href={SITE.offers.replay.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openCheckout("replay")}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 16,
+                  width: "100%",
                   background: "rgba(255, 255, 255, 0.03)",
                   color: "var(--white)",
                   padding: "16px 28px",
                   borderRadius: 14,
                   border: "1px solid var(--black-line)",
-                  textDecoration: "none",
+                  cursor: "pointer",
                   transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                 }}
@@ -280,7 +280,7 @@ export default function Contact() {
                     {SITE.offers.replay.basePrice ? formatPrice(SITE.offers.replay.basePrice) : `${SITE.offers.replay.price} ${SITE.offers.replay.currency}`}
                   </div>
                 </div>
-              </a>
+              </button>
 
               <div style={{
                 marginTop: 22, paddingTop: 20,

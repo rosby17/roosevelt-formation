@@ -1,23 +1,11 @@
 "use client";
 import { SITE } from "@/lib/data";
-import Image from "next/image";
 import { useCurrency } from "@/lib/currency";
-
-const getEmbedUrl = (url: string) => {
-  if (!url) return "";
-  let videoId = "";
-  if (url.includes("youtube.com/watch?v=")) {
-    videoId = url.split("v=")[1].split("&")[0];
-  } else if (url.includes("youtu.be/")) {
-    videoId = url.split("youtu.be/")[1].split("?")[0];
-  } else if (url.includes("youtube.com/embed/")) {
-    return url;
-  }
-  return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-};
+import { useCheckout } from "@/components/CheckoutModal";
 
 export default function Hero() {
   const { formatPrice } = useCurrency();
+  const { openCheckout } = useCheckout();
 
   return (
     <header
@@ -126,15 +114,15 @@ export default function Hero() {
             animation: "fadeUp 0.65s ease both 0.3s",
           }}
         >
-          <a
-            href={SITE.offers.live.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openCheckout("live")}
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 10,
               background: "var(--red)",
+              cursor: "pointer",
+              border: "none",
               color: "#fff",
               fontSize: 15,
               fontWeight: 600,
@@ -166,12 +154,10 @@ export default function Hero() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </a>
+          </button>
 
-          <a
-            href={SITE.offers.replay.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openCheckout("replay")}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -183,7 +169,7 @@ export default function Hero() {
               padding: "14px 32px",
               borderRadius: 6,
               border: "1px solid var(--black-line)",
-              textDecoration: "none",
+              cursor: "pointer",
               transition: "transform 0.15s, border-color 0.2s",
             }}
             onMouseEnter={(e) => {
@@ -201,67 +187,7 @@ export default function Hero() {
               </span>
               <span>Replay &mdash; {SITE.offers.replay.basePrice ? formatPrice(SITE.offers.replay.basePrice) : `${SITE.offers.replay.currency} ${SITE.offers.replay.price}`}</span>
             </span>
-          </a>
-        </div>
-
-        {/* Video Section */}
-        <div
-          style={{
-            marginTop: 64,
-            width: "100%",
-            maxWidth: 800,
-            margin: "64px auto 0",
-            aspectRatio: "16/9",
-            borderRadius: 16,
-            overflow: "hidden",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-            border: "1px solid var(--black-line)",
-            background: "var(--black-card)",
-            animation: "fadeUp 0.65s ease both 0.4s",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-          }}
-        >
-          {SITE.heroVideo ? (
-            <iframe
-              width="100%"
-              height="100%"
-              src={getEmbedUrl(SITE.heroVideo)}
-              title="Présentation Roosevelt Mogo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              style={{ position: "absolute", top: 0, left: 0 }}
-            ></iframe>
-          ) : (
-            <div style={{ width: "100%", height: "100%", position: "relative" }}>
-              <Image 
-                src="/roosevelt.jpg" 
-                alt="Présentation" 
-                fill 
-                style={{ objectFit: "cover", opacity: 0.4 }} 
-              />
-              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ 
-                  width: 80, 
-                  height: 80, 
-                  background: "var(--red)", 
-                  borderRadius: "50%", 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center", 
-                  boxShadow: "0 8px 32px rgba(200,16,46,0.4)" 
-                }}>
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="var(--white)" style={{ marginLeft: 6 }}>
-                    <path d="M5 3l14 9-14 9V3z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          )}
+          </button>
         </div>
       </div>
     </header>

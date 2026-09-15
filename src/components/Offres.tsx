@@ -1,6 +1,7 @@
 "use client";
 import { SITE, REPLAY_FEATURES, LIVE_FEATURES } from "@/lib/data";
 import { useCurrency } from "@/lib/currency";
+import { useCheckout } from "@/components/CheckoutModal";
 
 export default function Offres() {
   return (
@@ -55,7 +56,7 @@ export default function Offres() {
             currency={SITE.offers.replay.currency}
             subtitle={SITE.offers.replay.subtitle}
             features={REPLAY_FEATURES}
-            href={SITE.offers.replay.url}
+            offer="replay"
             cta="Accéder aux Replays"
             featured={false}
           />
@@ -70,7 +71,7 @@ export default function Offres() {
             currency={SITE.offers.live.currency}
             subtitle={SITE.offers.live.subtitle}
             features={LIVE_FEATURES}
-            href={SITE.offers.live.url}
+            offer="live"
             cta="Réserver mon Live"
             featured={true}
           />
@@ -110,7 +111,7 @@ export default function Offres() {
 }
 
 function OfferCard({
-  tag, originalPrice, originalBasePrice, price, basePrice, currency, subtitle, features, href, cta, featured,
+  tag, originalPrice, originalBasePrice, price, basePrice, currency, subtitle, features, offer, cta, featured,
 }: {
   tag: string;
   originalPrice?: string;
@@ -120,11 +121,12 @@ function OfferCard({
   currency: string;
   subtitle: string;
   features: { ok: boolean; text: string }[];
-  href: string;
+  offer: "live" | "replay";
   cta: string;
   featured: boolean;
 }) {
   const { formatPriceParts, formatPrice } = useCurrency();
+  const { openCheckout } = useCheckout();
   const bg = featured ? "var(--red)" : "var(--black)";
   const border = featured ? "var(--red)" : "var(--black-line)";
   const featureColor = featured ? "rgba(255,255,255,0.85)" : "var(--white-muted)";
@@ -250,10 +252,8 @@ function OfferCard({
       </ul>
 
       {/* CTA */}
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={() => openCheckout(offer)}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -262,7 +262,7 @@ function OfferCard({
           borderRadius: 6,
           fontSize: 15,
           fontWeight: 600,
-          textDecoration: "none",
+          cursor: "pointer",
           transition: "transform 0.15s, background 0.2s",
           background: featured ? "var(--white)" : "transparent",
           color: featured ? "var(--black)" : "var(--red)",
@@ -279,7 +279,7 @@ function OfferCard({
       >
         {cta}
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      </button>
     </div>
   );
 }
