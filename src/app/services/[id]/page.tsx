@@ -125,7 +125,23 @@ export default function ServiceDetailPage({ params }: PageProps) {
                   lineHeight: 1.8,
                   marginBottom: 32
                 }}>
-                  {service.desc}
+                  {service.id === "chatgpt-pro-etudiant" ? (
+                    <>
+                      En tant qu&apos;étudiant,{" "}
+                      <a
+                        href="https://chatgpt.com/students/2026/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "var(--red)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}
+                      >
+                        ChatGPT Work
+                      </a>{" "}
+                      est offert 4 mois via l&apos;offre étudiante officielle. Je t&apos;accompagne pour créer et
+                      configurer ton compte correctement afin d&apos;en profiter.
+                    </>
+                  ) : (
+                    service.desc
+                  )}
                 </p>
               </div>
 

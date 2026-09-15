@@ -10,8 +10,8 @@ export const PAYMENT_OFFERS = {
     isLive: false,
   },
   "chatgpt-pro-etudiant": {
-    label: "Accès à ChatGPT Pro pendant 4 mois pour étudiants",
-    priceFcfa: 3300,
+    label: "Accès à ChatGPT Work pendant 4 mois pour étudiants",
+    priceFcfa: 2400,
     isLive: false,
     deliveryUrl: "https://www.youtube.com/watch?v=CsewzuG69fY",
   },
